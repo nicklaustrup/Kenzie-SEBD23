@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-347.0" y="193.5">com.kenzie.book.Book</node>
+    <node x="-394.5" y="73.5">com.kenzie.book.ProductInformation</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.kenzie.book.Book" target="com.kenzie.book.ProductInformation" relationship="TO_ONE">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="-295.00000000000006" y="158.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
