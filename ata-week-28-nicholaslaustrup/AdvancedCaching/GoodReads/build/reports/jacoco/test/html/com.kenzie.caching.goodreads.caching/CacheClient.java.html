@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CacheClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GoodReads</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.goodreads.caching</a> &gt; <span class="el_source">CacheClient.java</span></div><h1>CacheClient.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.goodreads.caching;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
+import javax.inject.Inject;
+
+public class CacheClient {
+    private final JedisPool pool;
+    @Inject
+<span class="fc" id="L11">    public CacheClient(JedisPool jedisPool) {</span>
+<span class="fc" id="L12">        this.pool = jedisPool;</span>
+<span class="fc" id="L13">    }</span>
+
+    public void setValue(String key, String value) {
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">        if (key == null){</span>
+<span class="nc" id="L17">            throw new IllegalArgumentException(&quot;Key cannot be empty!&quot;);</span>
+        }
+<span class="fc" id="L19">        try (Jedis jedis = pool.getResource()){</span>
+<span class="fc" id="L20">            jedis.setex(key, 60*60, value);</span>
+        }
+<span class="fc" id="L22">    }</span>
+    public String getValue(String key) {
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (key == null){</span>
+<span class="nc" id="L25">            throw new IllegalArgumentException(&quot;Key cannot be empty!&quot;);</span>
+        }
+<span class="fc" id="L27">        try (Jedis jedis = pool.getResource()){</span>
+<span class="fc" id="L28">            return jedis.get(key);</span>
+        }
+    }
+
+    public boolean invalidate(String key){
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if (key == null){</span>
+<span class="nc" id="L34">            throw new IllegalArgumentException(&quot;Key cannot be empty!&quot;);</span>
+        }
+<span class="fc" id="L36">        try (Jedis jedis = pool.getResource()){</span>
+<span class="fc" id="L37">            long isDeleted = jedis.del(key);</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            if (isDeleted &gt; 0){</span>
+<span class="fc" id="L39">                return true;</span>
+            }
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        }</span>
+<span class="nc" id="L42">        return false;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

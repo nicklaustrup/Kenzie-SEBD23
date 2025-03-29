@@ -1,0 +1,6 @@
+com/kenzie/stringbuilder/atastringbuilder/ATAStringBuilderExtensionOneTest.java
+ com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest
+com/kenzie/stringbuilder/atastringbuilder/ATAStringBuilderExtensionTwoTest.java
+ com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest
+com/kenzie/stringbuilder/atastringbuilder/ATAStringBuilderCompletionTest.java
+ com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest

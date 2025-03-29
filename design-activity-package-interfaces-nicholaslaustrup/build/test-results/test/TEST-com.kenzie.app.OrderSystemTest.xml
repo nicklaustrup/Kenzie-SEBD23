@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.OrderSystemTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-09-23T00:29:54" hostname="MASTERPC" time="0.016">
+  <properties/>
+  <testcase name="canCreateMenu()" classname="com.kenzie.app.OrderSystemTest" time="0.01"/>
+  <testcase name="canCreateCardPayment()" classname="com.kenzie.app.OrderSystemTest" time="0.001"/>
+  <testcase name="canCreateMenuItem()" classname="com.kenzie.app.OrderSystemTest" time="0.003"/>
+  <testcase name="canCreateOrder()" classname="com.kenzie.app.OrderSystemTest" time="0.0"/>
+  <testcase name="canCreateCustomer()" classname="com.kenzie.app.OrderSystemTest" time="0.001"/>
+  <testcase name="canCreateOrderSystem()" classname="com.kenzie.app.OrderSystemTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:51" hostname="MASTERPC" time="0.021">
+  <properties/>
+  <testcase name="substring_startTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="insert_offsetTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="substring_endTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="substring_startLargerThanEnd_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="insert_indexZero_addsToFront()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="append_appendPoint_containsPointsStringValue()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.01"/>
+  <testcase name="insert_indexLength_addsToEnd()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="substring_startTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.0"/>
+  <testcase name="substring_endTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.0"/>
+  <testcase name="substring_partialSequence_returnsSubstring()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="append_null_containsNullString()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.0"/>
+  <testcase name="substring_entireSequence_returnsEntireString()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.0"/>
+  <testcase name="insert_offsetTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <testcase name="insert_indexMiddle_addsToMiddle()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionTwoTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

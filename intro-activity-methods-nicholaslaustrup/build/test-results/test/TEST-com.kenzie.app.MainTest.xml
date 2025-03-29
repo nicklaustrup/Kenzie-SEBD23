@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-08-23T22:07:45" hostname="MASTERPC" time="0.018">
+  <properties/>
+  <testcase name="test_exerciseFour()" classname="com.kenzie.app.MainTest" time="0.012"/>
+  <testcase name="runMainWithoutCrashing()" classname="com.kenzie.app.MainTest" time="0.004"/>
+  <testcase name="test_exerciseOne()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_exerciseTwo()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_exerciseThree()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

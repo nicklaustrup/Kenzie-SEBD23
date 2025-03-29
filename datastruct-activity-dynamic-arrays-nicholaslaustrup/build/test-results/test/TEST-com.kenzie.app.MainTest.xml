@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-09-01T04:06:06" hostname="MASTERPC" time="0.019">
+  <properties/>
+  <testcase name="test_countNumOfCakes()" classname="com.kenzie.app.MainTest" time="0.011"/>
+  <testcase name="test_findTheSizeOfArrayList()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_convertStringArrayToArrayList()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_convertArrayListToStringArray()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_modifyTheElementAtParticularIndex()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_sortTheArrayList()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_accessTheElementAtParticularIndex()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_createFoodsList()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="runMain()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <system-out><![CDATA[Exercise One
+[Pizza, Pie, Milkshakes, Cake]
+Exercise Two
+4
+Exercise Three
+Pizza
+Exercise Four
+4
+Exercise Five
+Sushi
+Exercise Six
+[Apple, Broccoli, Pear, Zucchini]
+Exercise Seven
+[Waffles, Bananas, Squid, Pizza, Chicken nuggets made of tofu]
+Exercise Eight
+[Waffles, Bananas, Oatmeal]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

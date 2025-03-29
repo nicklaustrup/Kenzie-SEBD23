@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AwsCustomerStatistics.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BigSpender</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.groupactivity.bigspender</a> &gt; <span class="el_source">AwsCustomerStatistics.java</span></div><h1>AwsCustomerStatistics.java</h1><pre class="source lang-java linenums">package com.kenzie.groupactivity.bigspender;
+
+import com.kenzie.groupactivity.bigspender.compare.CustomerTotalSpendBySpend;
+import com.kenzie.groupactivity.bigspender.dao.AwsServiceInvoiceDao;
+import com.kenzie.groupactivity.bigspender.types.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * A class that uses the AWS customer spending data provided by an
+ * AwsServiceInvoiceDao to calculate information about the
+ * customers.
+ */
+public class AwsCustomerStatistics {
+    private Customer customer;
+    private long totalSpend;
+    private List&lt;ServiceSpend&gt; serviceSpends;
+    private AwsServiceInvoiceDao awsServiceInvoiceDao;
+
+
+    /**
+     * Creates a statistics instance with the provided DAO.
+     * @param awsServiceInvoiceDao The AwsServiceInvoiceDao to use
+     */
+<span class="fc" id="L27">    public AwsCustomerStatistics(AwsServiceInvoiceDao awsServiceInvoiceDao) {</span>
+<span class="fc" id="L28">        this.awsServiceInvoiceDao = awsServiceInvoiceDao;</span>
+<span class="fc" id="L29">    }</span>
+
+    /**
+     * Produces a list of the single service each AWS customer spent the most on,
+     * sorted by customer name (ascending).
+     * @return A list of CustomerServiceSpend representing the highest service
+     *         spend for each customer, sorted by customer name
+     */
+    public List&lt;CustomerServiceSpend&gt; getTopServiceSpendForEachCustomer() {
+        // PARTICIPANTS: Which list needs to be sorted and returned?
+<span class="fc" id="L39">        List&lt;CustomerServiceSpend&gt; topCustomerServiceSpends =</span>
+<span class="fc" id="L40">                awsServiceInvoiceDao.getHighestServiceSpendsForEachCustomer();</span>
+
+<span class="fc" id="L42">        Collections.sort(topCustomerServiceSpends);</span>
+
+<span class="fc" id="L44">        return topCustomerServiceSpends;</span>
+    }
+
+    /**
+     * Produces a list of *all* service spends of each AWS customer,
+     * sorted by total spend (descending), then by the service spend (individual
+     * service spend (descending), then service name).
+     *
+     * @return A list of CustomerServiceSpend, sorted by AWS customer
+     * total spend and individual service spend.
+     */
+    public List&lt;CustomerServiceSpend&gt; getTopItemizedSpends() {
+        // PARTICIPANTS: Implement according to Javadoc and README
+<span class="nc" id="L57">        List&lt;CustomerServiceSpend&gt; report = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L58">        List&lt;CustomerTotalSpend&gt; totalSpends = awsServiceInvoiceDao.getAllServiceSpends();</span>
+
+<span class="nc" id="L60">        Collections.sort(totalSpends, new CustomerTotalSpendBySpend().reversed());</span>
+
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        for (CustomerTotalSpend currentSpend : totalSpends) {</span>
+            //get the current customer
+<span class="nc" id="L64">            Customer currCustomer = currentSpend.getCustomer();</span>
+            //get all the services the customer used
+<span class="nc" id="L66">            List&lt;ServiceSpend&gt; serviceSpends = currentSpend.getServiceSpends();</span>
+
+<span class="nc" id="L68">            Collections.sort(serviceSpends, new ServiceSpendByService().reversed());</span>
+            //for each service, add the customer and the service spend to the CustomerServiceSpend report
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            for (ServiceSpend serviceSpend : serviceSpends) {</span>
+<span class="nc" id="L71">                report.add(new CustomerServiceSpend(currCustomer, serviceSpend));</span>
+<span class="nc" id="L72">            }</span>
+<span class="nc" id="L73">        }</span>
+<span class="nc" id="L74">        return report;</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

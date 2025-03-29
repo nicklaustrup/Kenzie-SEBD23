@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.comparable.userpagevisit.UserPageVisitTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:46" hostname="MASTERPC" time="0.014">
+  <properties/>
+  <testcase name="compareTo_visitsWithLeftHavingHigherUserId_resultIsPositive()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.009"/>
+  <testcase name="compareTo_visitsWithSameUserIdsSamePages_resultMatchesResultOfCallingEquals()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.0"/>
+  <testcase name="compareTo_visitsWithLeftHavingLowerUserId_resultIsNegative()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.001"/>
+  <testcase name="compareTo_visitsWithSameUserIdsLeftHavingLaterPage_resultIsPositive()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.0"/>
+  <testcase name="compareTo_visitsWithSameUserIdsSamePages_resultIsZero()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.001"/>
+  <testcase name="compareTo_visitsWithSameUserIdsLeftHavingFirstPage_resultIsNegative()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.0"/>
+  <testcase name="compareTo_visitsWithSameDifferentUserIds_resultMatchesResultOfCallingEquals()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.001"/>
+  <testcase name="compareTo_visitsWithSameUserIdsDifferentPages_resultMatchesResultOfCallingEquals()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

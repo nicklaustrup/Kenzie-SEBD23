@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:46" hostname="MASTERPC" time="0.038">
+  <properties/>
+  <testcase name="canAggregate_sameUserIdDifferentPage_returnsFalse()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.024"/>
+  <testcase name="aggregate_sameReference_observationsAggregated()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.007"/>
+  <testcase name="canAggregate_sameReference_returnsTrue()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.001"/>
+  <testcase name="canAggregate_differentUserIdDifferentPage_returnsFalse()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.001"/>
+  <testcase name="aggregate_differentUserIdSamePage_observationsNotAggregated()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.0"/>
+  <testcase name="aggregate_sameUserIdSamePage_observationsAggregated()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.0"/>
+  <testcase name="aggregate_differentUserIdDifferentPage_observationsNotAggregated()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.0"/>
+  <testcase name="canAggregate_sameUserIdSamePage_returnsTrue()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.0"/>
+  <testcase name="canAggregate_differentUserIdSamePage_returnsFalse()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.0"/>
+  <testcase name="aggregate_sameUserIdDifferentPage_observationsNotAggregated()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

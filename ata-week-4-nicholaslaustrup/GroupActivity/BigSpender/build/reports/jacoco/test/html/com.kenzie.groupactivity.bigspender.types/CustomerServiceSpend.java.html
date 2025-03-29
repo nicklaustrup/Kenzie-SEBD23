@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerServiceSpend.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BigSpender</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.groupactivity.bigspender.types</a> &gt; <span class="el_source">CustomerServiceSpend.java</span></div><h1>CustomerServiceSpend.java</h1><pre class="source lang-java linenums">package com.kenzie.groupactivity.bigspender.types;
+
+import java.util.Objects;
+
+/**
+ * Represents both a Customer and the details of one AWS service spend.
+ */
+public class CustomerServiceSpend implements Comparable&lt;CustomerServiceSpend&gt;{
+    private Customer customer;
+    private ServiceSpend serviceSpend;
+
+    /**
+     * Constructor taking a customer and a service spend.
+     * @param customer the customer.
+     * @param serviceSpend The service spend.
+     */
+<span class="fc" id="L17">    public CustomerServiceSpend(Customer customer, ServiceSpend serviceSpend) {</span>
+<span class="fc" id="L18">        this.customer = customer;</span>
+<span class="fc" id="L19">        this.serviceSpend = serviceSpend;</span>
+<span class="fc" id="L20">    }</span>
+
+    public Customer getCustomer() {
+<span class="fc" id="L23">        return customer;</span>
+    }
+
+    public ServiceSpend getServiceSpend() {
+<span class="fc" id="L27">        return serviceSpend;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L32">        return &quot;CustomerServiceSpend{&quot; +</span>
+               &quot;customer=&quot; + customer +
+               &quot;, serviceSpend=&quot; + serviceSpend +
+               '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (!(o instanceof CustomerServiceSpend)) return false;</span>
+<span class="fc" id="L42">        CustomerServiceSpend that = (CustomerServiceSpend) o;</span>
+<span class="pc bpc" id="L43" title="1 of 4 branches missed.">        return Objects.equals(customer, that.customer) &amp;&amp; Objects.equals(serviceSpend, that.serviceSpend);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L48">        return Objects.hash(customer, serviceSpend);</span>
+    }
+
+    @Override
+    public int compareTo(CustomerServiceSpend o) {
+<span class="fc" id="L53">        int result = customer.compareTo(o.getCustomer());</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (result == 0) {</span>
+<span class="fc" id="L55">            result = this.serviceSpend.getServiceName().compareTo(o.serviceSpend.getServiceName());</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (result == 0){</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">                if (this.serviceSpend.getSpend() - o.serviceSpend.getSpend() &lt; 0){</span>
+<span class="nc" id="L58">                    return -1;</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">                } else if (this.serviceSpend.getSpend() - o.serviceSpend.getSpend() &gt; 0) {</span>
+<span class="nc" id="L60">                    return 1;</span>
+                } else {
+<span class="fc" id="L62">                    return 0;</span>
+                    }
+                }
+            }
+<span class="fc" id="L66">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

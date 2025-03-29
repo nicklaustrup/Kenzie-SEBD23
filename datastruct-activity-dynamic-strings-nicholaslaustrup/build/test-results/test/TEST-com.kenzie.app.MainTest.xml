@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-01T20:28:21" hostname="MASTERPC" time="0.015">
+  <properties/>
+  <testcase name="test_replaceTextInString()" classname="com.kenzie.app.MainTest" time="0.012"/>
+  <testcase name="test_createFavoriteCharactersSentence()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_createStringBuilderWithName()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_createCommaSeparatedList()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="runMain()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <system-out><![CDATA[Exercise One
+Westley of Florin
+Exercise Two
+Westley, Buttercup, Vizzini, Fezzik
+Exercise Three
+He ate an entire Reese's Peanut Butter and felt sick...
+Exercise Four
+My favorite characters are Westley, Buttercup, Vizzini, and Fezzik.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

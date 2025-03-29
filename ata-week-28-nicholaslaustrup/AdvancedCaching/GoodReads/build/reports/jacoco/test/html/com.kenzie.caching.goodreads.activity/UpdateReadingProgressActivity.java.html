@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UpdateReadingProgressActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GoodReads</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.goodreads.activity</a> &gt; <span class="el_source">UpdateReadingProgressActivity.java</span></div><h1>UpdateReadingProgressActivity.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.goodreads.activity;
+
+import com.kenzie.caching.goodreads.caching.CachingReadingLogDao;
+import com.kenzie.caching.goodreads.dao.ReadingGoalDao;
+import com.kenzie.caching.goodreads.dao.ReadingLogDao;
+import com.kenzie.caching.goodreads.dao.models.ReadingLog;
+
+import java.time.ZonedDateTime;
+import javax.inject.Inject;
+
+/**
+ * Handles requests to update the reading progress for a user. This allows the user to periodically log how far in the
+ * book they are while they read.
+ */
+public class UpdateReadingProgressActivity {
+
+    private final ReadingLogDao readingLogDao;
+    private final ReadingGoalDao readingGoalDao;
+    private final CachingReadingLogDao cachingReadingLogDao;
+
+    /**
+     * Constructs an Activity with the given DAOs.
+     * @param readingLogDao The ReadingLogDao to use for updating what a user has read
+     * @param readingGoalDao The ReadingGoalDao to manage the user's reading goal
+     */
+    @Inject
+<span class="fc" id="L27">    public UpdateReadingProgressActivity(final ReadingLogDao readingLogDao, final ReadingGoalDao readingGoalDao, CachingReadingLogDao cachingReadingLogDao) {</span>
+<span class="fc" id="L28">        this.readingLogDao = readingLogDao;</span>
+<span class="fc" id="L29">        this.readingGoalDao = readingGoalDao;</span>
+<span class="fc" id="L30">        this.cachingReadingLogDao = cachingReadingLogDao;</span>
+<span class="fc" id="L31">    }</span>
+
+    /**
+     * Updates the reading progress for a user. This allows the user to periodically log how far in the book they are
+     * while they read.
+     * @param userId - the user who has finished the book
+     * @param isbn - the id of the book
+     * @param timestamp - the time to mark this update as occurring
+     * @param numberPagesInBook - the total number of pages in the book
+     * @param isFinished - whether or not the user is done with the book
+     *
+     * @return the updated reading log for the user and book
+     */
+    public ReadingLog handleRequest(final String userId,
+                                    final String isbn,
+                                    final ZonedDateTime timestamp,
+                                    final int numberPagesInBook,
+                                    final boolean isFinished) {
+//        return readingLogDao.updateReadingProgress(userId, isbn, timestamp, numberPagesInBook, isFinished);
+<span class="fc" id="L50">        return cachingReadingLogDao.updateReadingProgress(userId, isbn, timestamp, numberPagesInBook, isFinished);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

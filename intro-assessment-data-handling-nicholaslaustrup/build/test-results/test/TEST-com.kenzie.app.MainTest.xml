@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2022-08-24T04:54:17" hostname="MASTERPC" time="0.052">
+  <properties/>
+  <testcase name="test_questionMarks()" classname="com.kenzie.app.MainTest" time="0.013"/>
+  <testcase name="test_periods()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_totalWords()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_mid_punct_longestWord()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_exclamationPoints()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_end_punct_longestWord()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_commas()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_using_scanner()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_longestWord()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_vowelA()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_vowelE()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_vowelI()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_vowelO()" classname="com.kenzie.app.MainTest" time="0.01"/>
+  <testcase name="test_vowelU()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_characters()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_extra_spaces_longestWord()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_punct_totalWords()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_empty_totalWords()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_shortestWord()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

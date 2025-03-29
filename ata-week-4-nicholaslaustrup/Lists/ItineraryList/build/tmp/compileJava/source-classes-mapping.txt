@@ -1,0 +1,4 @@
+com/kenzie/lists/itinerarylist/Destination.java
+ com.kenzie.lists.itinerarylist.Destination
+com/kenzie/lists/itinerarylist/Itinerary.java
+ com.kenzie.lists.itinerarylist.Itinerary

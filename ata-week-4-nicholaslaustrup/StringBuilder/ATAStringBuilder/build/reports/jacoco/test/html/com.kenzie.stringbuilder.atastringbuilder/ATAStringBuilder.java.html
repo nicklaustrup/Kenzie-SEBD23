@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ATAStringBuilder.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ATAStringBuilder</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.stringbuilder.atastringbuilder</a> &gt; <span class="el_source">ATAStringBuilder.java</span></div><h1>ATAStringBuilder.java</h1><pre class="source lang-java linenums">package com.kenzie.stringbuilder.atastringbuilder;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * A mutable sequence of characters.
+ */
+public class ATAStringBuilder {
+
+    // tracks the mutable sequence of characters
+    private List&lt;Character&gt; value;
+
+    /**
+     * COMPLETION 1
+     *
+     * Constructs a string builder with no characters in it.
+     */
+<span class="fc" id="L20">    public ATAStringBuilder() {</span>
+<span class="fc" id="L21">        value = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L22">    }</span>
+
+    /**
+     * COMPLETION 1
+     *
+     * Constructs a string builder initialized to the contents of the
+     * specified string.
+     *
+     * @param initialString the initial contents of the string builder
+     */
+    public ATAStringBuilder(String initialString) {
+<span class="fc" id="L33">        this();</span>
+
+<span class="fc" id="L35">        this.append(initialString);</span>
+<span class="fc" id="L36">    }</span>
+
+    /**
+     * COMPLETION 2
+     *
+     * Returns the length (character count).
+     *
+     * @return the length of the sequence of characters currently
+     * represented by this object
+     */
+    public int length() {
+<span class="fc" id="L47">        return value.size();</span>
+    }
+
+    /**
+     * COMPLETION 2
+     *
+     * Appends the specified string.
+     * &lt;p&gt;
+     * The characters of the {@code String} argument are appended, in
+     * order, increasing the length of this sequence by the length of the
+     * argument. If {@code str} is {@code null}, then the four
+     * characters {@code &quot;null&quot;} are appended.
+     *
+     * @param str a string, to be appended.
+     * @return a reference to this object.
+     */
+    public ATAStringBuilder append(String str) {
+<span class="fc" id="L64">        String localNull = &quot;null&quot;;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (!(str == null)) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            for (int i = 0; i &lt; str.length(); i++) {</span>
+<span class="fc" id="L67">                value.add(str.charAt(i));</span>
+            }
+<span class="fc" id="L69">            return this;</span>
+        } else {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            for (int i = 0; i &lt; localNull.length(); i++) {</span>
+<span class="fc" id="L72">                value.add(localNull.charAt(i));</span>
+            }
+<span class="fc" id="L74">        } return this;</span>
+    }
+
+
+    /**
+     * COMPLETION 2
+     *
+     * Inserts the {@code char} argument into this sequence.
+     * &lt;p&gt;
+     * The {@code offset} argument must be greater than or equal to
+     * {@code 0}, and less than or equal to the {@linkplain #length() length}
+     * of this sequence.
+     *
+     * @param offset the offset.
+     * @param c      a {@code char}.
+     * @return a reference to this object.
+     * @throws IndexOutOfBoundsException if the offset is invalid.
+     */
+    public ATAStringBuilder insert(int offset, char c) {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        if (offset &gt; value.size()) {</span>
+<span class="fc" id="L94">        throw new IndexOutOfBoundsException(&quot;Index value cannot be greater than the array&quot;);</span>
+        }
+<span class="fc" id="L96">        value.add(offset, c);</span>
+<span class="fc" id="L97">            return this;</span>
+    }
+
+    /**
+     * COMPLETION 2
+     *
+     * Returns the {@code char} value in this sequence at the specified index.
+     * The first {@code char} value is at index {@code 0}, the next at index
+     * {@code 1}, and so on, as in array indexing.
+     * &lt;p&gt;
+     * The index argument must be greater than or equal to
+     * {@code 0}, and less than the length of this sequence.
+     *
+     * @param index the index of the desired {@code char} value.
+     * @return the {@code char} value at the specified index.
+     * @throws IndexOutOfBoundsException if {@code index} is
+     *                                   negative or greater than or equal to {@code length()}.
+     */
+    public char charAt(int index) {
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">        if (index &gt; value.size()){</span>
+<span class="nc" id="L117">            throw new IndexOutOfBoundsException(&quot;Index must not be larger than array size&quot;);</span>
+        }
+<span class="fc" id="L119">        return value.get(index);</span>
+    }
+
+    /**
+     * EXTENSION 1
+     * &lt;p&gt;
+     * The character at the specified index is set to {@code ch}. This
+     * sequence is altered to represent a new character sequence that is
+     * identical to the old character sequence, except that it contains the
+     * character {@code ch} at position {@code index}.
+     * &lt;p&gt;
+     * The index argument must be greater than or equal to
+     * {@code 0}, and less than the length of this sequence.
+     *
+     * @param index the index of the character to modify.
+     * @param ch    the new character.
+     * @return This object.
+     * @throws IndexOutOfBoundsException if {@code index} is
+     *                                   negative or greater than or equal to {@code length()}.
+     */
+    public ATAStringBuilder setCharAt(int index, char ch) {
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">        if (index &gt; value.size()){</span>
+<span class="nc" id="L141">            throw new IndexOutOfBoundsException(&quot;Index must not be greater than array&quot;);</span>
+        }
+<span class="fc" id="L143">        value.remove(index);</span>
+<span class="fc" id="L144">        value.add(index, ch);</span>
+<span class="fc" id="L145">        return this;</span>
+    }
+
+    /**
+     * EXTENSION 1
+     * &lt;p&gt;
+     * Removes the {@code char} at the specified position in this
+     * sequence. This sequence is shortened by one.
+     *
+     * @param index Index of {@code char} to remove
+     * @return This object.
+     * @throws StringIndexOutOfBoundsException if the {@code index}
+     *                                         is negative or greater than or equal to
+     *                                         {@code length()}.
+     */
+    public ATAStringBuilder deleteCharAt(int index) {
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">        if (index &gt; value.size()){</span>
+<span class="nc" id="L162">            throw new IndexOutOfBoundsException(&quot;Index must not be greater than array&quot;);</span>
+        }
+<span class="fc" id="L164">        value.remove(index);</span>
+<span class="fc" id="L165">        return this;</span>
+    }
+    
+    /**
+     * EXTENSION 2
+     * &lt;p&gt;
+     * Appends the string representation of the {@code Object} argument, using the method String.valueOf.
+     * &lt;p&gt;
+     * If {@code obj} is {@code null}, then the four characters {@code &quot;null&quot;} are appended.
+     *
+     * @param obj an {@code Object}, to be appended.
+     * @return a reference to this object.
+     */
+    //CHECKSTYLE:OFF:OverloadMethodsDeclarationOrder
+    public ATAStringBuilder append(Object obj) {
+<span class="fc" id="L180">        String localNull = &quot;null&quot;;</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">        if (!(obj == null)) {</span>
+<span class="fc bfc" id="L182" title="All 2 branches covered.">            for (int i = 0; i &lt; String.valueOf(obj).length(); i++) {</span>
+<span class="fc" id="L183">                value.add(String.valueOf(obj).charAt(i));</span>
+            }
+<span class="fc" id="L185">            return this;</span>
+        } else {
+<span class="nc bnc" id="L187" title="All 2 branches missed.">            for (int i = 0; i &lt; localNull.length(); i++) {</span>
+<span class="nc" id="L188">                value.add(localNull.charAt(i));</span>
+            }
+<span class="nc" id="L190">        } return this;</span>
+    }
+    //CHECKSTYLE:ON:OverloadMethodsDeclarationOrder
+    
+    /**
+     * EXTENSION 2
+     * &lt;p&gt;
+     * Inserts the string into this builder.
+     * &lt;p&gt;
+     * The characters of the {@code String} argument are inserted, in
+     * order, into this sequence at the indicated offset, moving up any
+     * characters originally above that position and increasing the length
+     * of this sequence by the length of the argument.
+     * &lt;p&gt;
+     * If {@code str} is {@code null}, then the four characters
+     * {@code &quot;null&quot;} are inserted into this sequence.
+     * &lt;p&gt;
+     * The {@code offset} argument must be greater than or equal to
+     * {@code 0}, and less than or equal to the {@linkplain #length() length}
+     * of this sequence.
+     *
+     * @param offset the offset where the string should be inserted.
+     * @param str    a string, to be inserted.
+     * @return a reference to this object.
+     * @throws StringIndexOutOfBoundsException if the offset is invalid.
+     */
+    //CHECKSTYLE:OFF:OverloadMethodsDeclarationOrder
+    public ATAStringBuilder insert(int offset, String str) {
+<span class="fc bfc" id="L218" title="All 2 branches covered.">        if (offset &gt; value.size()){</span>
+<span class="fc" id="L219">            throw new IndexOutOfBoundsException(&quot;Index must not be greater than array&quot;);</span>
+        }
+<span class="fc bfc" id="L221" title="All 2 branches covered.">        for (int i = 0; i &lt; str.length(); i++) {</span>
+<span class="fc" id="L222">            char ch = str.charAt(i);</span>
+<span class="fc" id="L223">            value.add(offset+i, ch);</span>
+        }
+<span class="fc" id="L225">        return this;</span>
+    }
+    //CHECKSTYLE:ON:OverloadMethodsDeclarationOrder
+
+    /**
+     * EXTENSION 2
+     * &lt;p&gt;
+     * Returns a new {@code String} that contains a subsequence of
+     * characters currently contained in this sequence. The
+     * substring begins at the specified {@code start} and
+     * extends to the character at index {@code end - 1}.
+     *
+     * @param start The beginning index, inclusive.
+     * @param end   The ending index, exclusive.
+     * @return The new string.
+     * @throws StringIndexOutOfBoundsException if {@code start}
+     *                                         or {@code end} are negative or greater than
+     *                                         {@code length()}, or {@code start} is
+     *                                         greater than {@code end}.
+     */
+    public String substring(int start, int end) {
+<span class="fc" id="L246">        StringBuilder string = new StringBuilder();</span>
+<span class="fc bfc" id="L247" title="All 2 branches covered.">        if (start &gt; value.size()</span>
+<span class="fc bfc" id="L248" title="All 6 branches covered.">                || end &gt; value.size()</span>
+                || start &gt; end
+                || start &lt; 0){
+<span class="fc" id="L251">            throw new IndexOutOfBoundsException(&quot;Index must not be greater than array&quot;);</span>
+        }
+<span class="fc bfc" id="L253" title="All 2 branches covered.">        for (int i = start; i &lt; end; i++) {</span>
+<span class="fc" id="L254">            string.append(charAt(i));</span>
+        }
+
+<span class="fc" id="L257">        return String.valueOf(string);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L262">        char[] charArray = transformListToArray(value);</span>
+<span class="fc" id="L263">        return new String(charArray);</span>
+    }
+
+    private char[] transformListToArray(List&lt;Character&gt; list) {
+<span class="fc" id="L267">        char[] transformed = new char[list.size()];</span>
+<span class="fc bfc" id="L268" title="All 2 branches covered.">        for (int index = 0; index &lt; list.size(); index++) {</span>
+<span class="fc" id="L269">            transformed[index] = list.get(index);</span>
+        }
+
+<span class="fc" id="L272">        return transformed;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

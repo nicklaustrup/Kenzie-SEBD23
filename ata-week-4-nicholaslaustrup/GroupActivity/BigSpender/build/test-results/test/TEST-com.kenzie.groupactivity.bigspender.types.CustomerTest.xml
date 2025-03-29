@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.groupactivity.bigspender.types.CustomerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-11-22T01:09:31" hostname="MASTERPC" time="0.007">
+  <properties/>
+  <testcase name="compareTo_withAnEqualCustomer_returnsZero()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.001"/>
+  <testcase name="compareTo_withSameCustomerNameEarlierJoinDate_returnsPositive()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="compareTo_withEarlierCustomerName_returnsPositive()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="equals_notEqualDate_returnsFalse()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="compareTo_withLaterCustomerName_returnsNegative()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="equals_equalAttributes_returnsTrue()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="compareTo_withSameCustomerNameLaterJoinDate_returnsNegative()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.001"/>
+  <testcase name="equals_inputObjectDifferentType_returnsFalse()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="equals_sameObject_returnsTrue()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="equals_inputObjectNull_returnsFalse()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <testcase name="equals_notEqualName_returnsFalse()" classname="com.kenzie.groupactivity.bigspender.types.CustomerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

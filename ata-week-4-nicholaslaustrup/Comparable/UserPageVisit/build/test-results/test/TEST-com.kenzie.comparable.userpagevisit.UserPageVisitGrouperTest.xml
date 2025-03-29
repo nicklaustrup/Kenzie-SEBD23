@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:46" hostname="MASTERPC" time="0.002">
+  <properties/>
+  <testcase name="groupUserPageVisits_visitsThatNeedToBeSorted_inputListIsNotModified()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" time="0.0"/>
+  <testcase name="groupUserPageVisits_visitsWithSameUserIdsSamePages_preservesAllVisits()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" time="0.001"/>
+  <testcase name="groupUserPageVisits_visitsWithDifferentUserIdsDifferentPages_sortedByPages()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" time="0.0"/>
+  <testcase name="groupUserPageVisits_visitsWithSameUserIdsDifferentPages_sortedByPages()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" time="0.0"/>
+  <testcase name="groupUserPageVisits_visitsWithDifferentUserIds_sortedByUserId()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

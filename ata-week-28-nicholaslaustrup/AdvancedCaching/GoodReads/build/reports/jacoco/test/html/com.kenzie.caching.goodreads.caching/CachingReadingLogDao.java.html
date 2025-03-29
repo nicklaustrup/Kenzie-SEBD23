@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CachingReadingLogDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GoodReads</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.goodreads.caching</a> &gt; <span class="el_source">CachingReadingLogDao.java</span></div><h1>CachingReadingLogDao.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.goodreads.caching;
+
+
+import com.kenzie.caching.goodreads.dao.NonCachingReadingLogDao;
+import com.kenzie.caching.goodreads.dao.ReadingLogDao;
+import com.kenzie.caching.goodreads.dao.models.ReadingLog;
+
+import java.time.ZonedDateTime;
+import javax.inject.Inject;
+
+public class CachingReadingLogDao implements ReadingLogDao {
+
+    private CacheClient cacheClient;
+    private NonCachingReadingLogDao readingDoa;
+
+    @Inject
+<span class="fc" id="L17">    public CachingReadingLogDao(CacheClient cacheClient, NonCachingReadingLogDao readingDoa) {</span>
+<span class="fc" id="L18">        this.cacheClient = cacheClient;</span>
+<span class="fc" id="L19">        this.readingDoa = readingDoa;</span>
+<span class="fc" id="L20">    }</span>
+
+    @Override
+    public ReadingLog updateReadingProgress(String userId, String isbn, ZonedDateTime timestamp,
+                                            int pageNumber, boolean isFinished) {
+<span class="fc" id="L25">       String key = &quot;books-read::&quot; + userId + &quot;::&quot; + timestamp.getYear();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">       if (isFinished){cacheClient.invalidate(key);}</span>
+<span class="fc" id="L27">       return readingDoa.updateReadingProgress(userId, isbn, timestamp, pageNumber, isFinished);</span>
+    }
+
+    @Override
+    public int getBooksReadInYear(String userId, int year) {
+<span class="fc" id="L32">        String key = &quot;books-read::&quot; + userId + &quot;::&quot; + year;</span>
+<span class="fc" id="L33">        String booksRead = cacheClient.getValue(key);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (booksRead == null){</span>
+<span class="fc" id="L35">            int booksReadLog = readingDoa.getBooksReadInYear(userId, year);</span>
+<span class="fc" id="L36">            cacheClient.setValue(key, String.valueOf(booksReadLog));</span>
+<span class="fc" id="L37">            return booksReadLog;</span>
+        }
+<span class="fc" id="L39">        return Integer.parseInt(booksRead);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

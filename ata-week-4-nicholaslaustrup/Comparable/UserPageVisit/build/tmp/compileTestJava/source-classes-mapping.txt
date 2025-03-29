@@ -1,0 +1,8 @@
+com/kenzie/comparable/userpagevisit/UserPageVisitAggregatorTest.java
+ com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest
+com/kenzie/comparable/userpagevisit/UserPageVisitAggregateTest.java
+ com.kenzie.comparable.userpagevisit.UserPageVisitAggregateTest
+com/kenzie/comparable/userpagevisit/UserPageVisitGrouperTest.java
+ com.kenzie.comparable.userpagevisit.UserPageVisitGrouperTest
+com/kenzie/comparable/userpagevisit/UserPageVisitTest.java
+ com.kenzie.comparable.userpagevisit.UserPageVisitTest

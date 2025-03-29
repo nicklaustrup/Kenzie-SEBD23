@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-09-02T03:21:52" hostname="MASTERPC" time="0.016">
+  <properties/>
+  <testcase name="containsYouHaveInvited()" classname="com.kenzie.app.MainTest" time="0.01"/>
+  <testcase name="addMultipleAttendees()" classname="com.kenzie.app.MainTest" time="0.003"/>
+  <testcase name="addOneAttendee()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="addTwoAttendees()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

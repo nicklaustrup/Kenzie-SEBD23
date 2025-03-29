@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserPageVisitAggregate.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UserPageVisit</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.comparable.userpagevisit</a> &gt; <span class="el_source">UserPageVisitAggregate.java</span></div><h1>UserPageVisitAggregate.java</h1><pre class="source lang-java linenums">package com.kenzie.comparable.userpagevisit;
+
+/**
+ * This class contains statistics for a particular user page view, defined by its userId and page. We create instances
+ * of this class by providing a base UserPageVisit object, which is used to check if other UserPageVisits can be
+ * added to the current instance. The stats that are tracked are the average time spent on page, total time spent on
+ * page and the number of times a user has visited the given page.
+ */
+public class UserPageVisitAggregate {
+    private UserPageVisit baseVisit;
+    private int totalTimeOnPageInSeconds;
+    private int numberOfVisits;
+
+    /**
+     * Constructs a UserPageVisitAggregate object from the provided user page visit object.
+     * @param baseVisit initial page visit which is used to check if other page visit objects can
+     *                  be added to this aggregate.
+     */
+<span class="fc" id="L19">    public UserPageVisitAggregate(UserPageVisit baseVisit) {</span>
+<span class="fc" id="L20">        this.baseVisit = baseVisit;</span>
+<span class="fc" id="L21">        this.totalTimeOnPageInSeconds = baseVisit.getTimeOnPageInSeconds();</span>
+<span class="fc" id="L22">        this.numberOfVisits = 1;</span>
+<span class="fc" id="L23">    }</span>
+
+    /**
+     * Modifies all the stats with new value if the provided visit matches stored base visit.
+     * @param userPageVisit UserPageVisit whose value we're adding to the stats.
+     */
+    public void aggregate(UserPageVisit userPageVisit) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (canAggregate(userPageVisit)) {</span>
+<span class="fc" id="L31">            this.totalTimeOnPageInSeconds += userPageVisit.getTimeOnPageInSeconds();</span>
+<span class="fc" id="L32">            this.numberOfVisits++;</span>
+        }
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * Checks if the provided visit can be aggregated with this visit aggregate.
+     * @param userPageVisit UserPageVisit whose value we're adding to the stats.
+     * @return true if provided visit can be aggregated, false otherwise.
+     */
+    public boolean canAggregate(UserPageVisit userPageVisit) {
+<span class="fc" id="L42">        return this.baseVisit.equals(userPageVisit);</span>
+    }
+
+    public double getTotalTimeOnPageInSeconds() {
+<span class="fc" id="L46">        return totalTimeOnPageInSeconds;</span>
+    }
+
+    public int getNumberOfVisits() {
+<span class="fc" id="L50">        return numberOfVisits;</span>
+    }
+
+    public double getAverageTimeOnPageInSeconds() {
+<span class="fc" id="L54">        return (double) totalTimeOnPageInSeconds / numberOfVisits;</span>
+    }
+
+    public long getUserId() {
+<span class="fc" id="L58">        return baseVisit.getUserId();</span>
+    }
+
+    public String getPage() {
+<span class="fc" id="L62">        return baseVisit.getPage();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

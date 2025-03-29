@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StartGameActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Leaderboard</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.leaderboard</a> &gt; <span class="el_source">StartGameActivity.java</span></div><h1>StartGameActivity.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.leaderboard;
+
+import com.kenzie.caching.leaderboard.resources.GameServer;
+import com.kenzie.caching.leaderboard.resources.StartGameRequest;
+import com.kenzie.caching.leaderboard.resources.StartGameResult;
+
+import javax.inject.Inject;
+
+/**
+ * API operation to start a new game for a player.
+ */
+public class StartGameActivity {
+
+    private final GameServer gameServer;
+    private final CachingLeaderboardDao cachingLeaderboardDao;
+
+    @Inject
+<span class="nc" id="L18">    public StartGameActivity(GameServer gameServer, CachingLeaderboardDao cachingLeaderboardDao) {</span>
+<span class="nc" id="L19">        this.gameServer = gameServer;</span>
+<span class="nc" id="L20">        this.cachingLeaderboardDao = cachingLeaderboardDao;</span>
+<span class="nc" id="L21">    }</span>
+
+    /**
+     * Starts the game on the game server and any other logic we may need for the Start Game API.
+     * @param request A request with the username of the player to start a game for.
+     * @return The result of starting the game.
+     */
+    public StartGameResult enact(StartGameRequest request) {
+<span class="nc" id="L29">        cachingLeaderboardDao.invalidateScore(request.getUsername());</span>
+<span class="nc" id="L30">        gameServer.startGame(request.getUsername());</span>
+<span class="nc" id="L31">        return new StartGameResult();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

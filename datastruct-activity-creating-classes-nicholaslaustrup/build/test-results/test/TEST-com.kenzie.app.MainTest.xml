@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-09-06T21:09:10" hostname="MASTERPC" time="0.024">
+  <properties/>
+  <testcase name="roll1000Dice()" classname="com.kenzie.app.MainTest" time="0.014"/>
+  <testcase name="rollDice()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="runMain()" classname="com.kenzie.app.MainTest" time="0.006"/>
+  <testcase name="roll1000DiceReRolling1s()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <system-out><![CDATA[6
+3
+3
+3
+2
+2
+4
+4
+I rolled the dice and got: 8
+Rolling 1000 Dice...
+Results: 
+2: 23
+3: 45
+4: 92
+5: 105
+6: 144
+7: 179
+8: 122
+9: 128
+10: 84
+11: 48
+12: 30
+Rolling 1000 Dice while re-rolling 1s...
+Results: 
+2: 0
+3: 0
+4: 90
+5: 115
+6: 151
+7: 194
+8: 136
+9: 128
+10: 95
+11: 61
+12: 30
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

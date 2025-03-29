@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AwsServiceInvoiceDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BigSpender</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.groupactivity.bigspender.dao</a> &gt; <span class="el_source">AwsServiceInvoiceDao.java</span></div><h1>AwsServiceInvoiceDao.java</h1><pre class="source lang-java linenums">package com.kenzie.groupactivity.bigspender.dao;
+
+import com.kenzie.groupactivity.bigspender.types.Customer;
+import com.kenzie.groupactivity.bigspender.types.CustomerServiceSpend;
+import com.kenzie.groupactivity.bigspender.types.CustomerTotalSpend;
+import com.kenzie.groupactivity.bigspender.types.ServiceSpend;
+
+import com.google.common.annotations.VisibleForTesting;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.kenzie.groupactivity.bigspender.types.ServiceType.DYNAMODB;
+import static com.kenzie.groupactivity.bigspender.types.ServiceType.EC2;
+import static com.kenzie.groupactivity.bigspender.types.ServiceType.S3;
+
+/**
+ * This class provides AWS customer spending totals and itemized list of service spends
+ * that the participants need to complete the classroom activity for Comparable, Comparator, sort.
+ */
+public class AwsServiceInvoiceDao {
+    private Map&lt;String, List&lt;ServiceSpend&gt;&gt; charges;
+    private Map&lt;String, Customer&gt; customerData;
+
+    private List&lt;CustomerTotalSpend&gt; allServiceSpends;
+    private List&lt;CustomerServiceSpend&gt; highestServiceSpendsForEachCustomer;
+
+    /**
+     * Constructor that calculates the invoices and highest spends.
+     */
+<span class="fc" id="L36">    public AwsServiceInvoiceDao() {</span>
+<span class="fc" id="L37">        this.charges = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L38">        charges.put(&quot;nedflix&quot;, Arrays.asList(new ServiceSpend(S3, 50000L),</span>
+            new ServiceSpend(DYNAMODB, 5000L),
+            new ServiceSpend(EC2, 20000L)));
+<span class="fc" id="L41">        charges.put(&quot;godiddy&quot;, Arrays.asList(new ServiceSpend(EC2, 40000L),</span>
+            new ServiceSpend(S3, 5000L)));
+<span class="fc" id="L43">        charges.put(&quot;backup&quot;, Arrays.asList(new ServiceSpend(S3, 70000L)));</span>
+
+        // Load from file?
+<span class="fc" id="L46">        this.customerData = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L47">        customerData.put(&quot;nedflix&quot;, new Customer(&quot;nedflix&quot;, LocalDate.now()));</span>
+<span class="fc" id="L48">        customerData.put(&quot;godiddy&quot;, new Customer(&quot;godiddy&quot;, LocalDate.now()));</span>
+<span class="fc" id="L49">        customerData.put(&quot;backup&quot;, new Customer(&quot;backup&quot;, LocalDate.now()));</span>
+
+<span class="fc" id="L51">        allServiceSpends = calculateAllServiceSpends();</span>
+<span class="fc" id="L52">        highestServiceSpendsForEachCustomer = calculateHighestSpends();</span>
+<span class="fc" id="L53">    }</span>
+
+    @VisibleForTesting
+    public Map&lt;String, List&lt;ServiceSpend&gt;&gt; getCharges() {
+<span class="fc" id="L57">        return charges;</span>
+    }
+
+    @VisibleForTesting
+    public Map&lt;String, Customer&gt; getCustomerData() {
+<span class="fc" id="L62">        return customerData;</span>
+    }
+
+    /**
+     * Returns a list containing each customer's highest service spend.
+     * @return {@code List&lt;CustomerServiceSpend&gt;} with one entry for each customer,
+     *         containing the service spend for the single highest service spend
+     *         for that customer
+     */
+    public List&lt;CustomerServiceSpend&gt; getHighestServiceSpendsForEachCustomer() {
+<span class="fc" id="L72">        return new ArrayList&lt;&gt;(highestServiceSpendsForEachCustomer);</span>
+    }
+
+    /**
+     * Returns a list of all total spends for every customer.
+     * @return a {@code List&lt;CustomerTotalSpend&gt;} with one entry for each customer,
+     *         containing their total spend (and all individual service spends contained
+     *         within)
+     */
+    public List&lt;CustomerTotalSpend&gt; getAllServiceSpends() {
+<span class="nc" id="L82">        return new ArrayList&lt;&gt;(allServiceSpends);</span>
+    }
+
+    private List&lt;CustomerTotalSpend&gt; calculateAllServiceSpends() {
+<span class="fc" id="L86">        List&lt;CustomerTotalSpend&gt; allCustomersSpends = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;ServiceSpend&gt;&gt; charge : charges.entrySet()) {</span>
+<span class="fc" id="L89">            Customer customer = getCustomerForName(charge.getKey());</span>
+
+<span class="fc" id="L91">            List&lt;ServiceSpend&gt; serviceCharges = charge.getValue();</span>
+<span class="fc" id="L92">            CustomerTotalSpend customerTotalSpend = new CustomerTotalSpend(customer, serviceCharges);</span>
+
+<span class="fc" id="L94">            allCustomersSpends.add(customerTotalSpend);</span>
+<span class="fc" id="L95">        }</span>
+<span class="fc" id="L96">        return allCustomersSpends;</span>
+    }
+
+    private List&lt;CustomerServiceSpend&gt; calculateHighestSpends() {
+<span class="fc" id="L100">        List&lt;CustomerServiceSpend&gt; highestSpendPerCustomer = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;ServiceSpend&gt;&gt; charge : charges.entrySet()) {</span>
+            // Find the customer
+<span class="fc" id="L104">            String customerName = charge.getKey();</span>
+<span class="fc" id="L105">            Customer customer = getCustomerForName(customerName);</span>
+
+<span class="fc" id="L107">            List&lt;ServiceSpend&gt; serviceCharges = charge.getValue();</span>
+
+<span class="fc" id="L109">            ServiceSpend maxSpend = serviceCharges.stream()</span>
+<span class="fc" id="L110">                .max(Comparator.comparingLong(ServiceSpend::getSpend))</span>
+<span class="pc" id="L111">                .orElseThrow(() -&gt; new IllegalStateException(&quot;No max found for customer &quot; + customerName));</span>
+
+<span class="fc" id="L113">            highestSpendPerCustomer.add(new CustomerServiceSpend(customer, maxSpend));</span>
+<span class="fc" id="L114">        }</span>
+<span class="fc" id="L115">        return highestSpendPerCustomer;</span>
+    }
+
+    private Customer getCustomerForName(String name) {
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">        if (!customerData.containsKey(name)) {</span>
+<span class="nc" id="L120">            throw new IllegalArgumentException(&quot;No such customer: &quot; + name + &quot;!&quot;);</span>
+        }
+<span class="fc" id="L122">        return customerData.get(name);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

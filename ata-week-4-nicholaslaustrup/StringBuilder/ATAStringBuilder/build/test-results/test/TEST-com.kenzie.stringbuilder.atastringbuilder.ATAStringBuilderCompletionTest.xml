@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:51" hostname="MASTERPC" time="0.052">
+  <properties/>
+  <testcase name="constructor_default_containsNoCharacters()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.031"/>
+  <testcase name="constructor_initialString_containsProvidedString()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="length_emptyBuilder_returnsZero()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="insertChar_indexZero_addsToFront()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="insertChar_offsetTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.002"/>
+  <testcase name="charAt_indexZero_returnsFirstChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="append_emptyStringToNonemptyBuffer_contentsUnchanged()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="insertChar_indexLength_addsToEnd()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="charAt_indexLengthMinus1_returnsLastChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="charAt_indexTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="append_nonEmptyStringToEmptyBuilder_containsString()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="append_emptyStringToEmptyBuffer_emptyContents()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="append_nullString_nullAppended()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="insertChar_indexMiddle_addsToMiddle()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.0"/>
+  <testcase name="charAt_indexChar_returnsMiddleChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="append_nonEmptyStringToNonemptyBuffer_appendsNewString()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="insertChar_offsetTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="charAt_indexTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <testcase name="length_nonEmptyBuilder_returnsNumberOfChars()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderCompletionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-08-31T04:46:19" hostname="MASTERPC" time="0.017">
+  <properties/>
+  <testcase name="test_exerciseFive()" classname="com.kenzie.app.MainTest" time="0.01"/>
+  <testcase name="test_exerciseFour()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_exerciseNine()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="runMainWithoutCrashing()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="test_exerciseEleven()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_exerciseOne()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_exerciseSix()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_exerciseTen()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_exerciseTwo()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_exerciseEight()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="test_exerciseSeven()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="test_exerciseThree()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

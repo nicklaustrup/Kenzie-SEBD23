@@ -1,0 +1,6 @@
+rootProject.name = 'ata-week-4'
+include ':Utilities'
+include ':Comparable:UserPageVisit'
+include ':GroupActivity:BigSpender'
+include ':Lists:ItineraryList'
+include ':StringBuilder:ATAStringBuilder'

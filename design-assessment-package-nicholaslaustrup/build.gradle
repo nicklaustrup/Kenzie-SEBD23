@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+    id 'idea'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.2'
+    implementation 'com.fasterxml:jackson-xml-databind:0.6.2'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'org.testng:testng:7.5'
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+    // Use JUnit test framework.
+    testImplementation(platform('org.junit:junit-bom:5.8.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

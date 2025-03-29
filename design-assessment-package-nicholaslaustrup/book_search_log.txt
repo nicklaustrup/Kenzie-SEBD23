@@ -1,0 +1,12 @@
+Process starting
+GET Response Code :: 200
+The Hobbit|J.R.R. Tolkien|1617530034|[Middle Earth (Imaginary place), Tolkien, j, r. r. (john ronald ruel), 1892-1973, Middle earth (imaginary place), Accessible book, Protected DAISY]
+GET Response Code :: 200
+Dune|Frank Herbert|9780743407304|[Dune (Television program), Accessible book, Protected DAISY]
+GET Response Code :: 200
+The Nonsense Book|Mr. Myzlplk||[]
+GET Response Code :: 200
+The Cat in the Hat|Dr. Seuss|9780075075660|[Dr. Seuss, Cat in the Hat, Children's, Books, Stories, Fiction, Rhymes, Rhyming, Play, Alphabet, Fantasy, Juvenile fiction, Cat, Hat, Cats, Stories in rhyme, Humorous stories, Picture books, Nonsense verses, Amusements, Pictorial works, Readers, Children's fiction, Cats, fiction, Cat in the hat (fictitious character), fiction, Large type books, Readers (Primary), Readers (Elementary)]
+GET Response Code :: 200
+The Art of War|Sun Tzu|9789536306039|[Military art and science, early works to 1800]
+Process complete

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CachingModule.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GoodReads</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.goodreads.dependency</a> &gt; <span class="el_source">CachingModule.java</span></div><h1>CachingModule.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.goodreads.dependency;
+
+import dagger.Module;
+import dagger.Provides;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+
+import javax.inject.Singleton;
+
+@Module
+<span class="fc" id="L11">public class CachingModule {</span>
+    /**
+     * This method provides a JedisPool object used to connect to a Redis cache.
+     * @return A JedisPool object
+     */
+    @Provides
+    @Singleton
+    public JedisPool provideJedisPool() {
+<span class="fc" id="L19">        return new JedisPool(new JedisPoolConfig(), &quot;localhost&quot;, 6379, 20000);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

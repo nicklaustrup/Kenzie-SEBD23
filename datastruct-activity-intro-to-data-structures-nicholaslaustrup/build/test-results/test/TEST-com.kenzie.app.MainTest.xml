@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-09-08T04:49:46" hostname="MASTERPC" time="0.018">
+  <properties/>
+  <testcase name="GradeBook class can be instantiated with no arguments" classname="com.kenzie.app.MainTest" time="0.012"/>
+  <testcase name="GradeBook objects have been created" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="Gradebook objects setter/getters working" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="GradeBook class can be instantiated with two arguments" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="Gradebook return grades above or equal threshhold" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="Gradebook return grades below or equal threshhold" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="GradeBook has correct grades" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="Gradebook has correct grades after changeGrade" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

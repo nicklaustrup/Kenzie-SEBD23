@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:46" hostname="MASTERPC" time="0.005">
+  <properties/>
+  <testcase name="aggregate_singleVisit_resultHasSingleVisitAggregateObject()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" time="0.002"/>
+  <testcase name="aggregate_multipleEqualVisits_resultHasSingleVisitAggregateObject()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" time="0.001"/>
+  <testcase name="aggregate_multipleVisitsWithDifferentUserIds_resultHasMultipleVisitAggregateObjects()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" time="0.0"/>
+  <testcase name="aggregate_emptyList_resultIsAlsoAnEmptyList()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" time="0.001"/>
+  <testcase name="aggregate_multipleVisitsnWithSameUserIdsDifferentPages_resultHasMultipleMetricAggregateObjects()" classname="com.kenzie.comparable.userpagevisit.UserPageVisitAggregatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

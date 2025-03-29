@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-11-21T03:55:51" hostname="MASTERPC" time="0.01">
+  <properties/>
+  <testcase name="setCharAt_indexMiddle_replacesMiddle()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.001"/>
+  <testcase name="setCharAt_indexLengthMinus1_replacesEnd()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <testcase name="deleteCharAt_indexTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.001"/>
+  <testcase name="setCharAt_indexZero_replacesFront()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <testcase name="deleteCharAt_indexZero_removesFirstChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <testcase name="setCharAt_indexTooSmall_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.001"/>
+  <testcase name="deleteCharAt_indexLengthMinus1_removesLastChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <testcase name="deleteCharAt_indexTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.001"/>
+  <testcase name="deleteCharAt_indexMiddle_removesMiddleChar()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <testcase name="setCharAt_indexTooLarge_throwsException()" classname="com.kenzie.stringbuilder.atastringbuilder.ATAStringBuilderExtensionOneTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

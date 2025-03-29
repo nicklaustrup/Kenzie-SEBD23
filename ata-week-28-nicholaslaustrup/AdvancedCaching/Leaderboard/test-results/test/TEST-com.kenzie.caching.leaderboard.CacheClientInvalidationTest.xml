@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-05-17T00:49:36" hostname="MASTERPC" time="1.552">
+  <properties/>
+  <testcase name="invalidate_cacheKeyDoesNotExist_returnFalse()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="1.512"/>
+  <testcase name="setValue_givenCacheEntry_storesInRedis()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.014"/>
+  <testcase name="invalidate_cacheKeyExists_removeFromCache()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.005"/>
+  <testcase name="getValue_cacheMiss_returnsEmptyOptional()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.004"/>
+  <testcase name="getValue_nullKey_throwsIllegalArgumentException()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.004"/>
+  <testcase name="getValue_cacheHit_getsData()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.004"/>
+  <testcase name="invalidate_nullKey_throwsIllegalArgumentException()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.002"/>
+  <testcase name="setValue_nullKey_throwsIllegalArgumentException()" classname="com.kenzie.caching.leaderboard.CacheClientInvalidationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

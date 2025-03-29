@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-09-13T17:35:21" hostname="MASTERPC" time="0.015">
+  <properties/>
+  <testcase name="testGetVIPList_VIPFound()" classname="com.kenzie.app.MainTest" time="0.011"/>
+  <testcase name="testAddPassIfUnique_DuplicatePassNotAdded()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="testAddPassIfUnique_NewPassSameKeyUpdated()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="testAddPassIfUnique_CanAddOnePass()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <testcase name="testAddPassIfUnique_CanAddMultiplePasses()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="testEntryPass_Constructor()" classname="com.kenzie.app.MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

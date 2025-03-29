@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Customer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BigSpender</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.groupactivity.bigspender.types</a> &gt; <span class="el_source">Customer.java</span></div><h1>Customer.java</h1><pre class="source lang-java linenums">package com.kenzie.groupactivity.bigspender.types;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+/**
+ * Represents a customer who uses AWS.
+ */
+public class Customer implements Comparable&lt;Customer&gt;{
+    private String name;
+    private LocalDate joinDate;
+
+    /**
+     * Constructor creating an AWS customer.
+     * @param name The unique name of the customer.
+     * @param joinDate The Data that the customer joined.
+     */
+<span class="fc" id="L18">    public Customer(String name, LocalDate joinDate) {</span>
+<span class="fc" id="L19">        this.name = name;</span>
+<span class="fc" id="L20">        this.joinDate = joinDate;</span>
+<span class="fc" id="L21">    }</span>
+
+    public String getName() {
+<span class="fc" id="L24">        return name;</span>
+    }
+
+    public LocalDate getJoinDate() {
+<span class="fc" id="L28">        return joinDate;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L33">        return &quot;Customer{&quot; +</span>
+            &quot;name='&quot; + name + '\'' +
+            &quot;, joinDate=&quot; + joinDate +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (o == null) {</span>
+<span class="fc" id="L42">            return false;</span>
+        }
+
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (getClass() != o.getClass()) {</span>
+<span class="fc" id="L46">            return false;</span>
+        }
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (this == o) {</span>
+<span class="fc" id="L50">            return true;</span>
+        }
+
+<span class="fc" id="L53">        Customer that = (Customer) o;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        return Objects.equals(name, that.name) &amp;&amp;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            Objects.equals(joinDate, that.joinDate);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L60">        return Objects.hash(name, joinDate);</span>
+    }
+
+    @Override
+    public int compareTo(Customer o) {
+<span class="fc" id="L65">        int result =  name.compareTo(o.getName());</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (result == 0){</span>
+<span class="fc" id="L67">            result = joinDate.compareTo(o.getJoinDate());</span>
+        }
+<span class="fc" id="L69">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

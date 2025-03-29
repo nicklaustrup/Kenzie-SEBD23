@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DaoModule.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GoodReads</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.caching.goodreads.dependency</a> &gt; <span class="el_source">DaoModule.java</span></div><h1>DaoModule.java</h1><pre class="source lang-java linenums">package com.kenzie.caching.goodreads.dependency;
+
+
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.kenzie.caching.goodreads.DynamoDbClientProvider;
+import com.kenzie.caching.goodreads.dao.NonCachingReadingLogDao;
+import com.kenzie.caching.goodreads.dao.ReadingLogDao;
+import dagger.Module;
+import dagger.Provides;
+
+import javax.inject.Singleton;
+
+/**
+ * Provides DynamoDBMapper instance to DAO classes.
+ */
+@Module
+<span class="fc" id="L18">public class DaoModule {</span>
+
+    /**
+     * Creates and returns a DynamoDBMapper instance for the appropriate region.
+     * @return a DynamoDBMapper
+     */
+    @Singleton
+    @Provides
+    public DynamoDBMapper provideDynamoDBMapper() {
+<span class="fc" id="L27">        return new DynamoDBMapper(DynamoDbClientProvider.getDynamoDBClient(Regions.US_EAST_1));</span>
+    }
+
+    /**
+     * Creates and returns a ReadingLogDao instance.
+     * @param readingLogDao a NonCachingReadingLogDao (which implements ReadingLogDao)
+     * @return a ReadingLogDao
+     */
+    @Singleton
+    @Provides
+    public ReadingLogDao provideReadingLogDao(NonCachingReadingLogDao readingLogDao) {
+<span class="fc" id="L38">        return readingLogDao;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
