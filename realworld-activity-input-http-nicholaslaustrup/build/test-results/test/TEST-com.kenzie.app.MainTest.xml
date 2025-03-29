@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-10-09T18:42:27" hostname="MASTERPC" time="1.0">
+  <properties/>
+  <testcase name="canFormatActivityOutput()" classname="com.kenzie.app.MainTest" time="0.175"/>
+  <testcase name="canMapActivity()" classname="com.kenzie.app.MainTest" time="0.002"/>
+  <testcase name="canCreateActivity()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="canFormatURL_TwoPropertiesAndValues()" classname="com.kenzie.app.MainTest" time="0.003"/>
+  <testcase name="canGetActivityType()" classname="com.kenzie.app.MainTest" time="0.429"/>
+  <testcase name="canFormatURL_OnePropertyAndValue()" classname="com.kenzie.app.MainTest" time="0.001"/>
+  <testcase name="canGetURLResponse()" classname="com.kenzie.app.MainTest" time="0.012"/>
+  <testcase name="canGetActivityTypeForGroup()" classname="com.kenzie.app.MainTest" time="0.186"/>
+  <testcase name="canGetActivityWithPrice()" classname="com.kenzie.app.MainTest" time="0.187"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

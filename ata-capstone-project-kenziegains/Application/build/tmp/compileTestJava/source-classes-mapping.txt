@@ -1,0 +1,8 @@
+com/kenzie/appserver/service/ExampleServiceTest.java
+ com.kenzie.appserver.service.ExampleServiceTest
+com/kenzie/appserver/service/UserServiceTest.java
+ com.kenzie.appserver.service.UserServiceTest
+com/kenzie/appserver/service/ClassAttendanceServiceTest.java
+ com.kenzie.appserver.service.ClassAttendanceServiceTest
+com/kenzie/appserver/service/InstructorLeadClassServiceTest.java
+ com.kenzie.appserver.service.InstructorLeadClassServiceTest

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserRecord.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.repositories.model</a> &gt; <span class="el_source">UserRecord.java</span></div><h1>UserRecord.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.repositories.model;
+
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.validation.constraints.NotEmpty;
+import java.util.Objects;
+
+@DynamoDBTable(tableName = &quot;User&quot;)
+<span class="nc" id="L12">public class UserRecord {</span>
+
+    private String userId;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String userType;
+
+    private String membership;
+
+    private String status;
+
+    private String username;
+
+    private String password;
+
+
+    public String getUserId() {
+<span class="nc" id="L32">        return userId;</span>
+    }
+
+    public void setUserId(String userId) {
+<span class="nc" id="L36">        this.userId = userId;</span>
+<span class="nc" id="L37">    }</span>
+
+    public String getFirstName() {
+<span class="nc" id="L40">        return firstName;</span>
+    }
+
+    public void setFirstName(String firstName) {
+<span class="nc" id="L44">        this.firstName = firstName;</span>
+<span class="nc" id="L45">    }</span>
+
+    public String getLastName() {
+<span class="nc" id="L48">        return lastName;</span>
+    }
+
+    public void setLastName(String lastName) {
+<span class="nc" id="L52">        this.lastName = lastName;</span>
+<span class="nc" id="L53">    }</span>
+
+    public String getUserType() {
+<span class="nc" id="L56">        return userType;</span>
+    }
+
+    public void setUserType(String userType) {
+<span class="nc" id="L60">        this.userType = userType;</span>
+<span class="nc" id="L61">    }</span>
+
+    public String getMembership() {
+<span class="nc" id="L64">        return membership;</span>
+    }
+
+    public void setMembership(String membership) {
+<span class="nc" id="L68">        this.membership = membership;</span>
+<span class="nc" id="L69">    }</span>
+
+    public String getStatus() {
+<span class="nc" id="L72">        return status;</span>
+    }
+
+    public void setStatus(String status) {
+<span class="nc" id="L76">        this.status = status;</span>
+<span class="nc" id="L77">    }</span>
+    @DynamoDBHashKey(attributeName = &quot;username&quot;)
+    public String getUsername() {
+<span class="nc" id="L80">        return username;</span>
+    }
+
+    public void setUsername(String username) {
+<span class="nc" id="L84">        this.username = username;</span>
+<span class="nc" id="L85">    }</span>
+
+    public String getPassword() {
+<span class="nc" id="L88">        return password;</span>
+    }
+
+    public void setPassword(String password) {
+<span class="nc" id="L92">        this.password = password;</span>
+<span class="nc" id="L93">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L98">            return true;</span>
+        }
+<span class="nc bnc" id="L100" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L101">            return false;</span>
+        }
+<span class="nc" id="L103">        UserRecord userRecord = (UserRecord) o;</span>
+<span class="nc" id="L104">        return Objects.equals(username, userRecord.username);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L109">        return Objects.hash(username);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

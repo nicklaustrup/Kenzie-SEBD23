@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.ApplicationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-10-05T05:36:25" hostname="MASTERPC" time="0.021">
+  <properties/>
+  <testcase name="testRunMainBadWeekInput_Word()" classname="com.kenzie.app.ApplicationTest" time="0.013"/>
+  <testcase name="testRunMainBadDayInput_Word()" classname="com.kenzie.app.ApplicationTest" time="0.001"/>
+  <testcase name="testRunMainBadDayInput_Number()" classname="com.kenzie.app.ApplicationTest" time="0.001"/>
+  <testcase name="testRunMainBadWeekInput_Number()" classname="com.kenzie.app.ApplicationTest" time="0.001"/>
+  <testcase name="testReadCSVFromFile()" classname="com.kenzie.app.ApplicationTest" time="0.002"/>
+  <testcase name="testRunMainBadWeekInput_Word_ThenGoodInput()" classname="com.kenzie.app.ApplicationTest" time="0.001"/>
+  <testcase name="testCreateMultidimensionalArray()" classname="com.kenzie.app.ApplicationTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

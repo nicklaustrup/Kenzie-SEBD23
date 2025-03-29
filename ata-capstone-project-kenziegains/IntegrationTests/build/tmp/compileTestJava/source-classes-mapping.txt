@@ -1,0 +1,12 @@
+com/kenzie/appserver/controller/UserControllerTest.java
+ com.kenzie.appserver.controller.UserControllerTest
+com/kenzie/appserver/controller/InstructorLeadClassControllerTest.java
+ com.kenzie.appserver.controller.InstructorLeadClassControllerTest
+com/kenzie/appserver/DynamoDbInitializer.java
+ com.kenzie.appserver.DynamoDbInitializer
+com/kenzie/appserver/controller/ExampleControllerTest.java
+ com.kenzie.appserver.controller.ExampleControllerTest
+com/kenzie/appserver/controller/ClassAttendanceControllerTest.java
+ com.kenzie.appserver.controller.ClassAttendanceControllerTest
+com/kenzie/appserver/IntegrationTest.java
+ com.kenzie.appserver.IntegrationTest

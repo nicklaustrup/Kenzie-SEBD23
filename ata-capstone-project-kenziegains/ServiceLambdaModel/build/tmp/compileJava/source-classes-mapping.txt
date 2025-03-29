@@ -1,0 +1,6 @@
+com/kenzie/capstone/service/model/ClassAttendanceData.java
+ com.kenzie.capstone.service.model.ClassAttendanceData
+com/kenzie/capstone/service/model/InstructorLeadClassData.java
+ com.kenzie.capstone.service.model.InstructorLeadClassData
+com/kenzie/capstone/service/model/UserData.java
+ com.kenzie.capstone.service.model.UserData

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LambdaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ServiceLambda</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.capstone.service</a> &gt; <span class="el_source">LambdaService.java</span></div><h1>LambdaService.java</h1><pre class="source lang-java linenums">package com.kenzie.capstone.service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kenzie.capstone.service.converter.LocalDateTimeConverter;
+//import com.kenzie.capstone.service.caching.CachingDao;
+import com.kenzie.capstone.service.model.*;
+import com.kenzie.capstone.service.dao.ExampleDao;
+
+import javax.inject.Inject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+public class LambdaService {
+
+//    private CachingDao exampleDao;
+private ExampleDao exampleDao;
+    private ObjectMapper mapper;
+
+//    @Inject
+//    public LambdaService(CachingDao exampleDao) {
+//        this.exampleDao = exampleDao;
+//        this.mapper = new ObjectMapper();
+//    }
+@Inject
+<span class="fc" id="L29">public LambdaService(ExampleDao exampleDao) {</span>
+<span class="fc" id="L30">    this.exampleDao = exampleDao;</span>
+<span class="fc" id="L31">    this.mapper = new ObjectMapper();</span>
+<span class="fc" id="L32">}</span>
+
+
+//    public ExampleData getExampleData(String id) {
+//        List&lt;ExampleRecord&gt; records = exampleDao.getExampleData(id);
+//        if (records.size() &gt; 0) {
+//            return new ExampleData(records.get(0).getId(), records.get(0).getData());
+//        }
+//        return null;
+//    }
+
+//    public ExampleData setExampleData(String data) {
+//        String id = UUID.randomUUID().toString();
+//        ExampleRecord record = exampleDao.setExampleData(id, data);
+//        return new ExampleData(id, data);
+//    }
+
+
+    /***************        INSTRUCTOR LEAD CLASS         *********************/
+    public InstructorLeadClassData getInstructorLeadClassData(String classId) {
+<span class="fc" id="L52">        List&lt;InstructorLeadClassRecord&gt; records = exampleDao.getInstructorLeadClassData(classId);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (records.size() &gt; 0) {</span>
+<span class="fc" id="L54">            return new InstructorLeadClassData(records.get(0).getClassId(), records.get(0).getName(), records.get(0).getDescription(), records.get(0).getClassType(), records.get(0).getUserId(), records.get(0).getClassCapacity(), records.get(0).getDateTime().toString(), records.get(0).isStatus());</span>
+        }
+<span class="fc" id="L56">        return null;</span>
+    }
+    public List&lt;InstructorLeadClassData&gt; getAllInstructorLeadClassData() {
+<span class="fc" id="L59">        List&lt;InstructorLeadClassRecord&gt; records = exampleDao.getAllInstructorLeadClassData();</span>
+<span class="fc" id="L60">        LocalDateTimeConverter converter = new LocalDateTimeConverter();</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (records.size() &gt; 0) {</span>
+<span class="fc" id="L62">            List&lt;InstructorLeadClassData&gt; instructorLeadClassDataList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            for(InstructorLeadClassRecord record : records) {</span>
+<span class="fc" id="L64">                InstructorLeadClassData instructorLeadClassData = new InstructorLeadClassData();</span>
+<span class="fc" id="L65">                instructorLeadClassData.setClassId(record.getClassId());</span>
+<span class="fc" id="L66">                instructorLeadClassData.setName(record.getName());</span>
+<span class="fc" id="L67">                instructorLeadClassData.setDescription(record.getDescription());</span>
+<span class="fc" id="L68">                instructorLeadClassData.setClassType(record.getClassType());</span>
+<span class="fc" id="L69">                instructorLeadClassData.setUserId(record.getUserId());</span>
+<span class="fc" id="L70">                instructorLeadClassData.setClassCapacity(record.getClassCapacity());</span>
+<span class="fc" id="L71">                instructorLeadClassData.setDateTime(converter.convert(record.getDateTime()));</span>
+<span class="fc" id="L72">                instructorLeadClassData.setStatus(record.isStatus());</span>
+<span class="fc" id="L73">                instructorLeadClassDataList.add(instructorLeadClassData);</span>
+<span class="fc" id="L74">            }</span>
+<span class="fc" id="L75">            return instructorLeadClassDataList;</span>
+        }
+<span class="fc" id="L77">        return null;</span>
+    }
+
+    public InstructorLeadClassData setInstructorLeadClassData(String name, String description, String classType, String userId, int classCapacity, String dateTime, boolean status) {
+<span class="fc" id="L81">        String id = UUID.randomUUID().toString();</span>
+<span class="fc" id="L82">        InstructorLeadClassRecord record = exampleDao.setInstructorLeadClassData(id, name, description, classType, userId, classCapacity, dateTime, status);</span>
+<span class="fc" id="L83">        return new InstructorLeadClassData(id, name, description, classType, userId, classCapacity, dateTime.toString(), status);</span>
+    }
+
+    public InstructorLeadClassData updateInstructorLeadClassData(String classId, String name, String description, String classType, String userId, int classCapacity, String dateTime, boolean status) {
+<span class="fc" id="L87">        InstructorLeadClassRecord record = exampleDao.updateInstructorLeadClassData(classId, name, description, classType, userId, classCapacity, dateTime, status);</span>
+<span class="fc" id="L88">        return new InstructorLeadClassData(classId, name, description, classType, userId, classCapacity, dateTime.toString(), status);</span>
+    }
+
+    /***************        USERS         *********************/
+    public UserData getUserData(String username) {
+<span class="fc" id="L93">        List&lt;UserRecord&gt; records = exampleDao.getUserData(username);</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (records.size() &gt; 0) {</span>
+<span class="fc" id="L95">            return new UserData(records.get(0).getUserId(), records.get(0).getFirstName(), records.get(0).getLastName(), records.get(0).getUserType(), records.get(0).getMembership(), records.get(0).getStatus(), records.get(0).getUsername(), records.get(0).getPassword());</span>
+        }
+<span class="fc" id="L97">        return null;</span>
+    }
+    public List&lt;UserData&gt; getAllUsersData() {
+<span class="fc" id="L100">        List&lt;UserRecord&gt; records = exampleDao.getAllUsersData();</span>
+
+<span class="fc" id="L102">        return records.stream()</span>
+<span class="fc" id="L103">                .map(record -&gt; new UserData(record.getUserId(),</span>
+<span class="fc" id="L104">                        record.getFirstName(),</span>
+<span class="fc" id="L105">                        record.getLastName(),</span>
+<span class="fc" id="L106">                        record.getUserType(),</span>
+<span class="fc" id="L107">                        record.getMembership(),</span>
+<span class="fc" id="L108">                        record.getStatus(),</span>
+<span class="fc" id="L109">                        record.getUsername(),</span>
+<span class="fc" id="L110">                        record.getPassword()))</span>
+<span class="fc" id="L111">                .collect(Collectors.toList());</span>
+    }
+
+    public UserData setUserData(String data) {
+        UserData userData;
+
+        try{
+<span class="fc" id="L118">            userData = mapper.readValue(data, UserData.class);</span>
+<span class="nc" id="L119">        } catch(JsonProcessingException e) {</span>
+<span class="nc" id="L120">            throw new RuntimeException(&quot;Unable to map deserialize JSON: &quot; + e);</span>
+<span class="fc" id="L121">        }</span>
+
+<span class="fc" id="L123">        UserRecord record = exampleDao.setUserData(userData);</span>
+<span class="fc" id="L124">        return new UserData(record.getUserId(), record.getFirstName(), record.getLastName(), record.getUserType(), record.getMembership(), record.getStatus(), record.getUsername(), record.getPassword());</span>
+    }
+    public UserData updateUserData(String data) {
+        UserData userData;
+
+        try{
+<span class="fc" id="L130">            userData = mapper.readValue(data, UserData.class);</span>
+<span class="fc" id="L131">        } catch(JsonProcessingException e) {</span>
+<span class="fc" id="L132">            throw new RuntimeException(&quot;Unable to map deserialize JSON: &quot; + e);</span>
+<span class="fc" id="L133">        }</span>
+
+<span class="fc" id="L135">        UserRecord record = exampleDao.updateUserData(userData);</span>
+<span class="fc" id="L136">        return new UserData(record.getUserId(), record.getFirstName(), record.getLastName(), record.getUserType(), record.getMembership(), record.getStatus(), record.getUsername(), record.getPassword());</span>
+    }
+
+    /***************        CLASS ATTENDANCE CLASS         *********************/
+    public ClassAttendanceData getClassAttendanceData(String userId, String classId) {
+<span class="fc" id="L141">        List&lt;ClassAttendanceRecord&gt; records = exampleDao.getAttendanceData(userId, classId);</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        if (records.size() &gt; 0) {</span>
+<span class="fc" id="L143">            return new ClassAttendanceData(records.get(0).getUserId(), records.get(0).getClassId(), records.get(0).getAttendanceStatus());</span>
+        }
+<span class="fc" id="L145">        return null;</span>
+    }
+
+    public ClassAttendanceData setClassAttendanceData(String userId, String classId, String attendanceStatus) {
+<span class="fc" id="L149">        ClassAttendanceRecord record = exampleDao.setAttendanceData(userId, classId, attendanceStatus);</span>
+<span class="fc" id="L150">        return new ClassAttendanceData(userId, classId, attendanceStatus);</span>
+    }
+
+    public ClassAttendanceData updateClassAttendanceData(String userId, String classId, String attendanceStatus) {
+<span class="fc" id="L154">        ClassAttendanceRecord record = exampleDao.updateClassAttendanceData(userId, classId, attendanceStatus);</span>
+<span class="fc" id="L155">        return new ClassAttendanceData(userId, classId, attendanceStatus);</span>
+    }
+    public List&lt;ClassAttendanceData&gt; getAllClassAttendanceData() {
+<span class="fc" id="L158">        List&lt;ClassAttendanceRecord&gt; records = exampleDao.getAllClassAttendanceData();</span>
+
+<span class="fc bfc" id="L160" title="All 2 branches covered.">        if (records.size() &gt; 0) {</span>
+<span class="fc" id="L161">            List&lt;ClassAttendanceData&gt; attendanceDataArrayList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">            for(ClassAttendanceRecord record : records) {</span>
+<span class="fc" id="L163">                ClassAttendanceData classAttendanceData = new ClassAttendanceData();</span>
+<span class="fc" id="L164">                classAttendanceData.setClassId(record.getClassId());</span>
+<span class="fc" id="L165">                classAttendanceData.setUserId(record.getUserId());</span>
+<span class="fc" id="L166">                classAttendanceData.setAttendanceStatus(record.getAttendanceStatus());</span>
+<span class="fc" id="L167">                attendanceDataArrayList.add(classAttendanceData);</span>
+<span class="fc" id="L168">            }</span>
+<span class="fc" id="L169">            return attendanceDataArrayList;</span>
+        }
+<span class="fc" id="L171">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

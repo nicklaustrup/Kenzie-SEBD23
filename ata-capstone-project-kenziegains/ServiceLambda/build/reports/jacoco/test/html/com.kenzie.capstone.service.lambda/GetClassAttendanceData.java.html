@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GetClassAttendanceData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ServiceLambda</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.capstone.service.lambda</a> &gt; <span class="el_source">GetClassAttendanceData.java</span></div><h1>GetClassAttendanceData.java</h1><pre class="source lang-java linenums">package com.kenzie.capstone.service.lambda;
+
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.kenzie.capstone.service.LambdaService;
+import com.kenzie.capstone.service.dependency.DaggerServiceComponent;
+import com.kenzie.capstone.service.dependency.ServiceComponent;
+import com.kenzie.capstone.service.model.ClassAttendanceCompositeId;
+import com.kenzie.capstone.service.model.ClassAttendanceData;
+//import com.kenzie.capstone.service.model.ExampleData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
+
+<span class="nc" id="L21">public class GetClassAttendanceData implements RequestHandler&lt;APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent&gt; {</span>
+
+<span class="nc" id="L23">    static final Logger log = LogManager.getLogger();</span>
+
+    @Override
+    public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent input, Context context) {
+<span class="nc" id="L27">        GsonBuilder builder = new GsonBuilder();</span>
+<span class="nc" id="L28">        Gson gson = builder.create();</span>
+
+<span class="nc" id="L30">        log.info(gson.toJson(input));</span>
+
+<span class="nc" id="L32">        ServiceComponent serviceComponent = DaggerServiceComponent.create();</span>
+<span class="nc" id="L33">        LambdaService lambdaService = serviceComponent.provideLambdaService();</span>
+<span class="nc" id="L34">        Map&lt;String, String&gt; headers = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L35">        headers.put(&quot;Content-Type&quot;, &quot;application/json&quot;);</span>
+
+<span class="nc" id="L37">        APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent()</span>
+<span class="nc" id="L38">                .withHeaders(headers);</span>
+
+
+<span class="nc" id="L41">        String userId = input.getPathParameters().get(&quot;userId&quot;);</span>
+<span class="nc" id="L42">        String classId = input.getPathParameters().get(&quot;classid&quot;);</span>
+
+
+<span class="nc bnc" id="L45" title="All 4 branches missed.">        if (userId == null || userId.length() == 0) {</span>
+<span class="nc" id="L46">            return response</span>
+<span class="nc" id="L47">                    .withStatusCode(400)</span>
+<span class="nc" id="L48">                    .withBody(&quot;UserId is invalid&quot;);</span>
+
+        }
+<span class="nc bnc" id="L51" title="All 4 branches missed.">        if (classId == null || classId.length() == 0) {</span>
+<span class="nc" id="L52">            return response</span>
+<span class="nc" id="L53">                    .withStatusCode(400)</span>
+<span class="nc" id="L54">                    .withBody(&quot;ClassId is invalid&quot;);</span>
+
+        }
+        try {
+<span class="nc" id="L58">            ClassAttendanceData classAttendanceData = lambdaService.getClassAttendanceData(userId,classId);</span>
+<span class="nc" id="L59">            String output = gson.toJson(classAttendanceData);</span>
+
+<span class="nc" id="L61">            return response</span>
+<span class="nc" id="L62">                    .withStatusCode(200)</span>
+<span class="nc" id="L63">                    .withBody(output);</span>
+
+<span class="nc" id="L65">        } catch (Exception e) {</span>
+<span class="nc" id="L66">            return response</span>
+<span class="nc" id="L67">                    .withStatusCode(400)</span>
+<span class="nc" id="L68">                    .withBody(gson.toJson(e.getMessage()));</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

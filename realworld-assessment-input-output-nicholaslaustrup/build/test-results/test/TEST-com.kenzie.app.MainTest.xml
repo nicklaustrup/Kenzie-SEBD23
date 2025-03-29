@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.app.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-09T23:33:30" hostname="MASTERPC" time="2.263">
+  <properties/>
+  <testcase name="runMain_CorrectOutPut()" classname="com.kenzie.app.MainTest" time="2.263"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
