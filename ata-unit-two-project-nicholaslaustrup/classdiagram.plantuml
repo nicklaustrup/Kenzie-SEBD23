@@ -1,0 +1,50 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Department
+class DepartmentService
+class Employee
+class EmployeeNotFoundException
+class EmployeeService
+class FunctionalRole
+class Role
+class RoleService
+class Storage
+class UnauthorizedException
+class User
+class UserOrRoleNotFoundException
+class UserRoleService
+class UserRoles
+class UserService
+class WareHouseService
+
+DepartmentService            -[#595959,dashed]->  Department                  : "«create»"
+DepartmentService           "1" *-[#595959,plain]-> "storage\n1" Storage                     
+Employee                     -[#000082,plain]-^  User                        
+EmployeeService              -[#595959,dashed]->  Employee                    : "«create»"
+EmployeeService              -[#595959,dashed]->  EmployeeNotFoundException   : "«create»"
+EmployeeService             "1" *-[#595959,plain]-> "roleService\n1" RoleService                 
+EmployeeService              -[#595959,dashed]->  UnauthorizedException       : "«create»"
+EmployeeService              -[#595959,dashed]->  UserOrRoleNotFoundException : "«create»"
+EmployeeService             "1" *-[#595959,plain]-> "userRoleService\n1" UserRoleService             
+EmployeeService             "1" *-[#595959,plain]-> "userService\n1" UserService                 
+FunctionalRole              "1" *-[#595959,plain]-> "roleName\n*" Role                        
+RoleService                  -[#595959,dashed]->  Role                        : "«create»"
+RoleService                 "1" *-[#595959,plain]-> "storage\n1" Storage                     
+Storage                      -[#595959,dashed]->  UserRoles                   : "«create»"
+User                        "1" *-[#595959,plain]-> "department\n1" Department                  
+UserRoleService             "1" *-[#595959,plain]-> "storage\n1" Storage                     
+UserRoleService              -[#595959,dashed]->  UserOrRoleNotFoundException : "«create»"
+UserRoles                   "1" *-[#595959,plain]-> "roles\n*" Role                        
+UserRoles                   "1" *-[#595959,plain]-> "user\n1" User                        
+UserService                 "1" *-[#595959,plain]-> "storage\n1" Storage                     
+UserService                  -[#595959,dashed]->  User                        : "«create»"
+WareHouseService             -[#595959,dashed]->  FunctionalRole              : "«create»"
+WareHouseService            "1" *-[#595959,plain]-> "invoicingClientRole\n1" FunctionalRole              
+WareHouseService            "1" *-[#595959,plain]-> "roleService\n1" RoleService                 
+WareHouseService            "1" *-[#595959,plain]-> "userRoleService\n1" UserRoleService             
+WareHouseService            "1" *-[#595959,plain]-> "userService\n1" UserService                 
+@enduml

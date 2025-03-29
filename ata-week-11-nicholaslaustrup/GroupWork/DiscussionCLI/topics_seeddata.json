@@ -1,0 +1,57 @@
+{
+  "DependencyInjection-Topics": [
+    {
+      "PutRequest": {
+        "Item": {
+          "name": { "S": "All about zebras" },
+          "description": {
+            "S": "Zebras are fascinating. It still baffles me that every discussion we have ends up involving zebras. I hear no complaints, however."
+          },
+          "isArchived": { "BOOL": false }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "name": { "S": "Why am I tired all the time?" },
+          "description": { "S": "Who knows! Maybe the rest of us." },
+          "isArchived": { "BOOL": false }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "name": { "S": "Teeth are just bones that are kind of outside" },
+          "description": {
+            "S": "Sometimes true statements sound false. We like to celebrate that."
+          },
+          "isArchived": { "BOOL": false }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "name": { "S": "Favorite music" },
+          "description": {
+            "S": "Drop a mention of any tracks you've been enjoying lately!"
+          },
+          "isArchived": { "BOOL": false }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "name": { "S": "Good doggos" },
+          "description": {
+            "S": "We're on the internet. It's basically required. Share cute dogs!"
+          },
+          "isArchived": { "BOOL": false }
+        }
+      }
+    }
+  ]
+}

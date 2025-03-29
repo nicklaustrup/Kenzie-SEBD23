@@ -1,0 +1,1 @@
+{"errorMessage":"Role already exists","errorType":"java.lang.IllegalArgumentException","stackTrace":["com.kenzie.unit.two.iam.service.RoleService.createRole(RoleService.java:19)","com.kenzie.unit.two.iam.lambda.CreateRole.handleRequest(CreateRole.java:29)","com.kenzie.unit.two.iam.lambda.CreateRole.handleRequest(CreateRole.java:15)"]}

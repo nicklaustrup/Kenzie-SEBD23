@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.eventplanner.integration.Phase3Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-27T00:24:09" hostname="MASTERPC" time="0.533">
+  <properties/>
+  <testcase name="getInvitesForOrganizerActivity_hasEvents_returnsEvents()" classname="com.kenzie.eventplanner.integration.Phase3Test" time="0.445"/>
+  <testcase name="getInvitesForOrganizerActivity_noEvents_returnsEmptyLIst()" classname="com.kenzie.eventplanner.integration.Phase3Test" time="0.087"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

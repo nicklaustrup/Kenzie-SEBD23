@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.socialcalendar.Phase1Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-26T02:22:31" hostname="MASTERPC" time="2.201">
+  <properties/>
+  <testcase name="deleteMember_onExistingMember_deletesMember()" classname="com.kenzie.socialcalendar.Phase1Test" time="2.201"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,78 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CFT for DynamoDB DependencyInjection table setup for ATA Week 11 group work
+
+Resources:
+  DependencyInjectionMembers:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      TableName: "DependencyInjection-Members"
+      BillingMode: "PAY_PER_REQUEST"
+      ContributorInsightsSpecification: 
+        Enabled: true
+      AttributeDefinitions:
+        - AttributeName: "username"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "username"
+          KeyType: "HASH"
+      PointInTimeRecoverySpecification: 
+        PointInTimeRecoveryEnabled: true
+      TableClass: "STANDARD"
+      Tags: 
+        - Key: Week
+          Value: 11
+        - Key: CourseName
+          Value: ata
+        - Key: InstructorMade
+          Value: true
+  DependencyInjectionMessages:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      TableName: "DependencyInjection-Messages"
+      BillingMode: "PAY_PER_REQUEST"
+      ContributorInsightsSpecification: 
+        Enabled: true
+      AttributeDefinitions:
+        - AttributeName: "topicName"
+          AttributeType: "S"
+        - AttributeName: "timestamp"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "topicName"
+          KeyType: "HASH"
+        - AttributeName: "timestamp"
+          KeyType: "RANGE"
+      PointInTimeRecoverySpecification: 
+        PointInTimeRecoveryEnabled: true
+      TableClass: "STANDARD"
+      Tags: 
+        - Key: Week
+          Value: 11
+        - Key: CourseName
+          Value: ata
+        - Key: InstructorMade
+          Value: true
+  DependencyInjectionTopics:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      TableName: "DependencyInjection-Topics"
+      BillingMode: "PAY_PER_REQUEST"
+      ContributorInsightsSpecification: 
+        Enabled: true
+      AttributeDefinitions:
+        - AttributeName: "name"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "name"
+          KeyType: "HASH"
+      PointInTimeRecoverySpecification: 
+        PointInTimeRecoveryEnabled: true
+      TableClass: "STANDARD"
+      Tags: 
+        - Key: Week
+          Value: 11
+        - Key: CourseName
+          Value: ata
+        - Key: InstructorMade
+          Value: true
+  

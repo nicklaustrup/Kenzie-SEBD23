@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-02-27T00:36:01" hostname="MASTERPC" time="0.788">
+  <properties/>
+  <testcase name="getAwayMatches_teamWithNoAwayGames_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.36"/>
+  <testcase name="getAwayMatches_tooEarly_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.087"/>
+  <testcase name="getAwayMatches_teamNotInLeague_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.088"/>
+  <testcase name="getAwayMatches_teamWithMultipleMatches_returnsOnlyAwayGames()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.086"/>
+  <testcase name="getAwayMatches_tooLate_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.081"/>
+  <testcase name="getAwayMatches_teamWithOneAwayGame_returnsOneAwayGame()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase2Test" time="0.084"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

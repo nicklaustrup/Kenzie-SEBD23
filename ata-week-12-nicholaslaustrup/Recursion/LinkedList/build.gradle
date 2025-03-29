@@ -1,0 +1,32 @@
+plugins {
+    id 'ata-curriculum.snippets-conventions'
+    id 'ata-curriculum.integration-test-conventions'
+}
+
+checkstyle {
+    def suppressionFile = rootProject.file('Utilities/ATACheckstyle/configuration/checkstyle/unit1/suppressions.xml')
+    configProperties.put('checkstyle.suppression.filter', suppressionFile)
+}
+
+def wflowToTestsMap = [
+        'recursion-linkedlist-phase0': ['com.kenzie.linkedlist.GetTest'],
+        'recursion-linkedlist-sum': ['com.kenzie.linkedlist.SumTest'],
+        'recursion-linkedlist-reverse': ['com.kenzie.linkedlist.ReverseTest'],
+        'recursion-linkedlist-size': ['com.kenzie.linkedlist.SizeTest'],
+        'recursion-linkedlist-contains': ['com.kenzie.linkedlist.ContainsTest'],
+        'recursion-linkedlist-max': ['com.kenzie.linkedlist.MaxTest'],
+        'recursion-linkedlist-hashcode': ['com.kenzie.linkedlist.HashCodeTest'],
+        'recursion-linkedlist-equals': ['com.kenzie.linkedlist.EqualsTest'],
+
+]
+
+wflowToTestsMap.forEach { wflowName, testList ->
+    tasks.register(wflowName) {
+        dependsOn wflowtest
+        test.doFirst {
+            filter {
+                testList.each { includeTestsMatching it }
+            }
+        }
+    }
+}

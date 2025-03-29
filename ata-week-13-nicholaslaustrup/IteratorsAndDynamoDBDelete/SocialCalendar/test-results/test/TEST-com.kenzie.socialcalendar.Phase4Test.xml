@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.socialcalendar.Phase4Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-01-26T02:47:20" hostname="MASTERPC" time="4.506">
+  <properties/>
+  <testcase name="getInvitesForMemberActivity_noCanceledEvents_returnsAllInvitesAndNoInvitesCanceled()" classname="com.kenzie.socialcalendar.Phase4Test" time="2.501"/>
+  <testcase name="getInvitesForMemberActivity_withCanceledEvent_marksCorrespondingInviteAsCanceled()" classname="com.kenzie.socialcalendar.Phase4Test" time="0.963"/>
+  <testcase name="getInvitesForMemberActivity_withCanceledEvent_returnsCanceledInviteInPlaceOfInvite()" classname="com.kenzie.socialcalendar.Phase4Test" time="1.041"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

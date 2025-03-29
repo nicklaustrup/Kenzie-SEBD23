@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.hotel.Phase1Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-01-30T05:53:39" hostname="MASTERPC" time="3.625">
+  <properties/>
+  <testcase name="modifyReservationActivity_modifiedReservation_logsModifiedCountMetric()" classname="com.kenzie.hotel.Phase1Test" time="1.712"/>
+  <testcase name="bookReservationActivity_createsReservation_logsBookingCountMetric()" classname="com.kenzie.hotel.Phase1Test" time="0.794"/>
+  <testcase name="cancelReservationActivity_canceledReservation_logsCanceledCountMetric()" classname="com.kenzie.hotel.Phase1Test" time="1.118"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

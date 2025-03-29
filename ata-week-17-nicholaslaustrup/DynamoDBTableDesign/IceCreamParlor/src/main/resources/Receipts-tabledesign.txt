@@ -1,0 +1,5 @@
+//Receipts
+receiptId // partition key, String
+timestamp // range key , String
+orderCost // String
+orderContents // List of sundaes purchased

@@ -1,0 +1,36 @@
+plugins {
+    id 'ata-curriculum.snippets-conventions'
+}
+
+checkstyle {
+    def suppressionFile = rootProject.file('Utilities/ATACheckstyle/configuration/checkstyle/unit1/suppressions.xml')
+    configProperties.put('checkstyle.suppression.filter', suppressionFile)
+}
+
+dependencies {
+    // Use JUnit test framework.
+    implementation 'com.google.dagger:dagger:2.40.5'
+    annotationProcessor('com.google.dagger:dagger:2.40.5')
+    testImplementation(platform('org.junit:junit-bom:5.8.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+def wflowToTestsMap = [
+        'searching-packagesearch-1-test': [
+            'com.kenzie.searching.packagesearch.AmazonOrderServiceTest1'
+        ],
+        'searching-packagesearch-2-test': [
+            'com.kenzie.searching.packagesearch.AmazonOrderServiceTest2'
+        ]
+]
+
+wflowToTestsMap.forEach { wflowName, testList ->
+    tasks.register(wflowName) {
+        dependsOn wflowtest
+        test.doFirst {
+            filter {
+                testList.each { includeTestsMatching it }
+            }
+        }
+    }
+}

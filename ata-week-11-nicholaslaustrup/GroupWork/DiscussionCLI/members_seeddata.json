@@ -1,0 +1,14 @@
+{
+    "DependencyInjection-Members": [
+      {
+        "PutRequest": {
+          "Item": {
+            "username": {"S": "joAnn*"},
+            "isActive": {"BOOL": true},
+            "karmaPointsAvailable": {"N": "20474"}
+          }
+        }
+      }
+    ]
+  }
+  

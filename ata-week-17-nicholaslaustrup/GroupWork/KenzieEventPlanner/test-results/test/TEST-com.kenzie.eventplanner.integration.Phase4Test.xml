@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.eventplanner.integration.Phase4Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-02-27T00:24:09" hostname="MASTERPC" time="2.917">
+  <properties/>
+  <testcase name="getInvitesForMemberActivity_noInvites_returnsEmptyLIst()" classname="com.kenzie.eventplanner.integration.Phase4Test" time="0.18"/>
+  <testcase name="getInvitesForMemberActivity_allAcceptedInvites_returnsAcceptedInvites()" classname="com.kenzie.eventplanner.integration.Phase4Test" time="0.99"/>
+  <testcase name="getInvitesForMemberActivity_someAcceptedInvites_returnsAllInvites()" classname="com.kenzie.eventplanner.integration.Phase4Test" time="1.746"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

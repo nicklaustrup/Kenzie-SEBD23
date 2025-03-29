@@ -1,0 +1,1 @@
+{"errorMessage":"User already exists","errorType":"java.lang.IllegalArgumentException","stackTrace":["com.kenzie.unit.two.iam.service.UserService.createUser(UserService.java:28)","com.kenzie.unit.two.iam.lambda.CreateUser.handleRequest(CreateUser.java:29)","com.kenzie.unit.two.iam.lambda.CreateUser.handleRequest(CreateUser.java:15)"]}

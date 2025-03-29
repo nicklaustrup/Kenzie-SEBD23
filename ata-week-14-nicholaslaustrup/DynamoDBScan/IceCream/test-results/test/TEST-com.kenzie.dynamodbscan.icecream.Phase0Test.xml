@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.dynamodbscan.icecream.Phase0Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-06T00:10:04" hostname="MASTERPC" time="1.251">
+  <properties/>
+  <testcase name="[1] DynamoDBScan-Receipts" classname="com.kenzie.dynamodbscan.icecream.Phase0Test" time="0.818"/>
+  <testcase name="orderSundae_succeeds()" classname="com.kenzie.dynamodbscan.icecream.Phase0Test" time="0.429"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

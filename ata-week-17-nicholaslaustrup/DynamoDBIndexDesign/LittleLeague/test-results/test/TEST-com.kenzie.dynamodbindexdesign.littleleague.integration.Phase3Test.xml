@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-02-27T00:36:02" hostname="MASTERPC" time="1.126">
+  <properties/>
+  <testcase name="getAllMatches_teamWithOneGame_returnsOneHomeGame()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" time="0.459"/>
+  <testcase name="getAllMatches_tooLate_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" time="0.172"/>
+  <testcase name="getAllMatches_teamWithMultipleMatches_returnsAllGames()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" time="0.16"/>
+  <testcase name="getAllMatches_teamNotInLeague_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" time="0.166"/>
+  <testcase name="getAllMatches_tooEarly_returnEmptyList()" classname="com.kenzie.dynamodbindexdesign.littleleague.integration.Phase3Test" time="0.166"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

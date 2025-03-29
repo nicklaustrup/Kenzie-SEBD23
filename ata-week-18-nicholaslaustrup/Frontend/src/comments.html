@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="commentPage.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body class="background">
+<header class="header" id="header">
+  <div class="site-title">
+    <a class="header_home" href="index.html">Comments Application</a>
+  </div>
+  <div>
+    <a href="index.html">Go to Index Page</a>
+  </div>
+</header>
+<div class="card">
+  <h2>Create comment</h2>
+  <form class="card-content" id="create-comment-form">
+    <p class="form-field">
+      <label>Title</label>
+      <input type="text" required class="validated-field" id="create-comment-title">
+      <label>Owner</label>
+      <input type="text" required class="validated-field" id="create-comment-owner">
+      <label>Content</label>
+      <input type="text" required class="validated-field" id="create-comment-content">
+    </p>
+    <button type="submit">Create</button>
+  </form>
+</div>
+<div class="card" id="result-comment">
+  <h2>Result:</h2>
+  <p id="result-comment-info"> </p>
+</div>
+</body>
+</html>

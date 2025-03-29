@@ -1,0 +1,21 @@
+We are planning to expand our service with the following operation:
+1. `GetEventsForOrganizer`
+   * Retrieve all `Event` data for a provided `organizerId`
+
+1. Which table contains the data necessary for the operation?
+   - ANSWER:DynamoDBIndexes-Events
+2. Explain why we cannot use load or query on the base table to retrieve this data.
+   - ANSWER: We need to use secondary attributes as primary and sort key so we will need to set up a GSI.
+3. Design the GSI we would create for `GetEventsForOrganizer`.
+   - What table would we create the GSI for?
+      - ANSWER: DynamoDBIndexes-Events
+   -  What is the partition key of the GSI?
+      - ANSWER: Primary key: organizerId
+   -  Does the GSI have a sort key? If so, what?
+      - ANSWER: time
+   -  What attributes from the base table need to be projected to the GSI?
+      - ANSWER: all
+   -  What are the pros/cons of using INCLUDE vs ALL for the attribute projection in this case?
+      - ANSWER: using include would keep our returns the same across new iterations but prevents the automatic inclusion of future additional attributes.
+   - Which will you use?
+      - ANSWER: All because that is what the plan calls for.

@@ -1,0 +1,45 @@
+plugins {
+    id 'ata-curriculum.snippets-conventions'
+}
+
+checkstyle {
+    def suppressionFile = rootProject.file('Utilities/ATACheckstyle/configuration/checkstyle/unit1/suppressions.xml')
+    configProperties.put('checkstyle.suppression.filter', suppressionFile)
+}
+
+
+dependencies {
+    // Use JUnit test framework.
+    api 'com.google.dagger:dagger:2.40.5'
+    implementation 'com.google.dagger:dagger:2.40.5'
+    annotationProcessor('com.google.dagger:dagger-compiler:2.40.5')
+    testImplementation(platform('org.junit:junit-bom:5.8.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+def wflowToTestsMap = [
+        'groupwork-discussioncli-test': [
+            'com.kenzie.groupwork.discussioncli.*'
+        ]
+]
+
+wflowToTestsMap.forEach { wflowName, testList ->
+    tasks.register(wflowName) {
+        dependsOn wflowtest
+        test.doFirst {
+            filter {
+                testList.each { includeTestsMatching it }
+            }
+        }
+    }
+}
+
+def wflowToMainClassMap = [
+        'groupwork-discussion-cli': 'com.kenzie.groupwork.discussioncli.cli.DiscussionCliRunner'
+]
+wflowToMainClassMap.forEach { wflowName, mainClass ->
+    tasks.register(wflowName) {
+        runMain.mainClass.set(mainClass)
+        dependsOn runMain
+    }
+}
